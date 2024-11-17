@@ -1,3 +1,314 @@
-<html>
-    Teste de visulização Ivan
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação de Serviços</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; padding: 20px; }
+        h1 { color: #4a90e2; text-align: center; }
+        label { font-weight: bold; color: #555; }
+        input[type="date"], input[type="time"], select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-top: 4px; }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service-table th, .service-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .service-table th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        .service-table tr:nth-child(even) { background-color: #f9f9f9; }
+
+        .verde { background-color: #dff0d8; }
+        .vermelho { background-color: #f2dede; color: #a94442; font-weight: bold; }
+
+        #services-list { margin-top: 10px; }
+        #dayOfWeek { font-weight: bold; color: #666; }
+        #frenteSelecionada { color: #4a90e2; font-weight: bold; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <h1>Gerador de Programação de Serviços</h1>
+
+    <label for="date">Data:</label>
+    <input type="date" id="date" required>
+    <span id="dayOfWeek"></span>
+
+    <label for="startTime">Hora Inicial:</label>
+    <input type="time" id="startTime" value="07:30" required><br><br>
+
+    <label>Frente de Serviço:</label>
+    <input type="radio" id="emboque" name="frente" value="Emboque" required>
+    <label for="emboque">Emboque</label>
+    <input type="radio" id="desemboque" name="frente" value="Desemboque" required>
+    <label for="desemboque">Desemboque</label><br><br>
+
+    <h2>Serviços Disponíveis</h2>
+    <div id="services-list"></div><br>
+
+    <label for="first-service">Primeiro Serviço:</label>
+    <select id="first-service" required></select><br><br>
+
+    <button onclick="gerarProgramacao()">Gerar Programação</button>
+    <button onclick="gerarExcel()">Gerar Excel</button>
+
+    <h2>Programação do Dia <span id="frenteSelecionada"></span></h2>
+
+    <table class="service-table" id="schedule">
+        <thead>
+            <tr>
+                <th>Sequência</th>
+                <th>Data</th>
+                <th>Serviço</th>
+                <th>Tempo de Serviço</th>
+                <th>Horário Inicial</th>
+                <th>Horário Final</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const servicos = [
+            { codigo: '1', descricao: 'Detonação', tempo: 60 },
+            { codigo: '2', descricao: 'Limpeza', tempo: 90 },
+            { codigo: '3', descricao: 'Choco', tempo: 120 },
+            { codigo: '4', descricao: 'Cambota/Top', tempo: 90 },
+            { codigo: '5', descricao: 'Projetado', tempo: 120 },
+            { codigo: '6', descricao: 'Topografia', tempo: 60 },
+            { codigo: '7', descricao: 'Tirantes', tempo: 60 },
+            { codigo: '8', descricao: 'Furação', tempo: 120 },
+            { codigo: '9', descricao: 'Carregamento', tempo: 60 }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const today = new Date();
+            const dateInput = document.getElementById("date");
+            dateInput.value = today.toISOString().split('T')[0];
+            setDayOfWeek();
+
+            servicos.forEach(servico => {
+                const serviceCheckbox = document.createElement('input');
+                serviceCheckbox.type = 'checkbox';
+                serviceCheckbox.checked = true;
+                serviceCheckbox.value = servico.codigo;
+                serviceCheckbox.addEventListener('change', updateFirstServiceOptions);
+
+                const label = document.createElement('label');
+                label.textContent = `${servico.codigo} - ${servico.descricao} (${formatTime(servico.tempo)})`;
+                
+                document.getElementById('services-list').appendChild(serviceCheckbox);
+                document.getElementById('services-list').appendChild(label);
+                document.getElementById('services-list').appendChild(document.createElement('br'));
+            });
+
+            updateFirstServiceOptions();
+        });
+
+        function setDayOfWeek() {
+            const dateInput = document.getElementById("date").value;
+            const date = new Date(dateInput + "T00:00");
+
+            const dayOfWeek = date.toLocaleDateString('pt-BR', { weekday: 'long' });
+            document.getElementById("dayOfWeek").textContent = ` - ${dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)}`;
+        }
+
+        document.getElementById("date").addEventListener("input", setDayOfWeek);
+
+        function formatTime(minutes) {
+            const hours = Math.floor(minutes / 60);
+            const mins = minutes % 60;
+            return `${hours}:${mins < 10 ? '0' + mins : mins}`;
+        }
+
+        function updateFirstServiceOptions() {
+            const firstServiceSelect = document.getElementById("first-service");
+            firstServiceSelect.innerHTML = ''; 
+
+            Array.from(document.querySelectorAll('#services-list input[type="checkbox"]:checked'))
+                .forEach(checkbox => {
+                    const servico = servicos.find(servico => servico.codigo === checkbox.value);
+                    const option = document.createElement('option');
+                    option.value = servico.codigo;
+                    option.text = `${servico.descricao}`;
+                    firstServiceSelect.add(option);
+                });
+        }
+
+        function gerarProgramacao() {
+            const frenteServico = document.querySelector('input[name="frente"]:checked');
+            if (!frenteServico) {
+                alert("Por favor, selecione uma Frente de Serviço (Emboque ou Desemboque) antes de gerar a programação.");
+                return;
+            }
+
+            document.getElementById("frenteSelecionada").textContent = `(${frenteServico.value})`;
+
+            const selectedDateInput = document.getElementById("date").value;
+            const selectedDate = new Date(selectedDateInput + "T00:00");
+
+            // Obtém o horário inicial da entrada e ajusta o currentTime para o horário inicial especificado
+            const startTimeInput = document.getElementById("startTime").value;
+            const [startHour, startMinute] = startTimeInput.split(":").map(Number);
+            const currentTime = new Date(selectedDate);
+            currentTime.setHours(startHour, startMinute);
+
+            const endTime = new Date(selectedDate);
+            endTime.setDate(endTime.getDate() + 1);
+            endTime.setHours(3, 30);
+
+            const selectedServices = Array.from(document.querySelectorAll('#services-list input[type="checkbox"]:checked'))
+                .map(checkbox => servicos.find(servico => servico.codigo === checkbox.value));
+            const firstServiceCode = document.getElementById("first-service").value;
+
+            const firstServiceIndex = selectedServices.findIndex(servico => servico.codigo === firstServiceCode);
+            const orderedServices = [
+                ...selectedServices.slice(firstServiceIndex),
+                ...selectedServices.slice(0, firstServiceIndex)
+            ];
+
+            let schedule = [];
+            let sequence = 1;
+            let serviceIndex = 0;
+
+            const trocaTurno1Inicio = new Date(selectedDate);
+            trocaTurno1Inicio.setHours(17, 30);
+            const trocaTurno1Fim = new Date(selectedDate);
+            trocaTurno1Fim.setHours(18, 30);
+
+            const trocaTurno2Inicio = new Date(selectedDate);
+            trocaTurno2Inicio.setDate(trocaTurno2Inicio.getDate() + 1);
+            trocaTurno2Inicio.setHours(3, 30);
+
+            while (currentTime < endTime) {
+                const service = orderedServices[serviceIndex];
+                let remainingTime = service.tempo;
+
+                while (remainingTime > 0) {
+                    const startTime = new Date(currentTime);
+                    const endTimeForService = new Date(currentTime.getTime() + remainingTime * 60000);
+
+                    if (startTime < trocaTurno1Inicio && endTimeForService >= trocaTurno1Inicio) {
+                        const timeUntilTurno = (trocaTurno1Inicio - startTime) / 60000;
+
+                        schedule.push({
+                            sequencia: sequence++,
+                            data: `${startTime.toLocaleDateString()} - ${startTime.toLocaleDateString('pt-BR', { weekday: 'long' })}`,
+                            servico: `${service.codigo} - ${service.descricao}`,
+                            horarioInicial: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            horarioFinal: trocaTurno1Inicio.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            tempoServico: formatTime(timeUntilTurno)
+                        });
+
+                        schedule.push({
+                            sequencia: sequence++,
+                            data: `${trocaTurno1Inicio.toLocaleDateString()} - ${trocaTurno1Inicio.toLocaleDateString('pt-BR', { weekday: 'long' })}`,
+                            servico: `TROCA DE TURNO 1`,
+                            horarioInicial: trocaTurno1Inicio.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            horarioFinal: trocaTurno1Fim.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            tempoServico: '1:00'
+                        });
+
+                        currentTime.setTime(trocaTurno1Fim.getTime());
+                        remainingTime -= timeUntilTurno;
+                    } else if (startTime < trocaTurno2Inicio && endTimeForService >= trocaTurno2Inicio) {
+                        const timeUntilTurno2 = (trocaTurno2Inicio - startTime) / 60000;
+
+                        schedule.push({
+                            sequencia: sequence++,
+                            data: `${startTime.toLocaleDateString()} - ${startTime.toLocaleDateString('pt-BR', { weekday: 'long' })}`,
+                            servico: `${service.codigo} - ${service.descricao}`,
+                            horarioInicial: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            horarioFinal: trocaTurno2Inicio.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            tempoServico: formatTime(timeUntilTurno2)
+                        });
+
+                        schedule.push({
+                            sequencia: sequence++,
+                            data: `${trocaTurno2Inicio.toLocaleDateString()} - ${trocaTurno2Inicio.toLocaleDateString('pt-BR', { weekday: 'long' })}`,
+                            servico: `TROCA DE TURNO 2`,
+                            horarioInicial: trocaTurno2Inicio.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            horarioFinal: '07:30',
+                            tempoServico: '4:00'
+                        });
+
+                        displaySchedule(schedule);
+                        return;
+                    } else {
+                        schedule.push({
+                            sequencia: sequence++,
+                            data: `${startTime.toLocaleDateString()} - ${startTime.toLocaleDateString('pt-BR', { weekday: 'long' })}`,
+                            servico: `${service.codigo} - ${service.descricao}`,
+                            horarioInicial: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            horarioFinal: endTimeForService.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            tempoServico: formatTime(remainingTime)
+                        });
+
+                        currentTime.setTime(endTimeForService.getTime());
+                        remainingTime = 0;
+                    }
+                }
+
+                serviceIndex = (serviceIndex + 1) % orderedServices.length;
+            }
+
+            displaySchedule(schedule);
+        }
+
+        function displaySchedule(schedule) {
+            const tbody = document.getElementById("schedule").querySelector("tbody");
+            tbody.innerHTML = '';
+            schedule.forEach(entry => {
+                const row = document.createElement("tr");
+                row.classList.add(entry.servico.includes("TROCA DE TURNO") ? "vermelho" : "verde");
+
+                row.innerHTML = `
+                    <td>${entry.sequencia}</td>
+                    <td>${entry.data}</td>
+                    <td>${entry.servico}</td>
+                    <td>${entry.tempoServico}</td>
+                    <td>${entry.horarioInicial}</td>
+                    <td>${entry.horarioFinal}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function gerarExcel() {
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.table_to_sheet(document.getElementById("schedule"));
+            XLSX.utils.book_append_sheet(wb, ws, "Programação do Dia");
+            XLSX.writeFile(wb, "programacao_dia.xlsx");
+        }
+    </script>
+
+</body>
 </html>
