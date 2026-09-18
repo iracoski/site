@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivan Racoski · Analista de Sistemas, ERP Fiscal e QA Automation</title>
+<meta name="description" content="Ivan Racoski — Analista de Sistemas Sênior com 16 anos em produtos ERP e 21 anos em rotinas fiscais e contábeis. QA Automation com Python e PyTest, Scrum Master e visão de produto. Disponível para atuação remota.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ivan Racoski · Analista de Sistemas, ERP Fiscal e QA Automation">
+<meta property="og:description" content="Ivan Racoski — Analista de Sistemas Sênior com 16 anos em produtos ERP e 21 anos em rotinas fiscais e contábeis. QA Automation com Python e PyTest, Scrum Master e visão de produto. Disponível para atuação remota.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#EEF1ED" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1411" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23131C18'/%3E%3Cpath d='M9 22.5 13.6 27 23 10' fill='none' stroke='%23EEF1ED' stroke-width='3.2' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Martian+Mono:wdth,wght@75..100,400..600&family=Public+Sans:wght@400..700&display=swap">
+<style>
+:root{
+  --paper:#EEF1ED; --surface:#F9FAF8; --sunken:#E3E8E3;
+  --ink:#131C18; --ink-2:#414D47; --ink-3:#5E6963;
+  --rule:#BCC5BE; --rule-soft:#D8DED8; --on-ink:#F7F9F6;
+  --qa:#0B6A45; --qa-tint:#D6EBDF;
+  --an:#22509B; --an-tint:#DAE4F3;
+  --erp:#865108; --erp-tint:#EFE1CA;
+  --po:#7E3072; --po-tint:#EEDBE9;
+  --on-lens:#FFFFFF;
+  --accent:var(--ink); --accent-tint:var(--sunken); --on-accent:var(--on-ink);
+  --f-display:"Archivo","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-body:"Public Sans","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:"Martian Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --gutter:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1411; --surface:#151D19; --sunken:#1D2722;
+    --ink:#E0E7E2; --ink-2:#ADB9B2; --ink-3:#8E9A93;
+    --rule:#35423B; --rule-soft:#232D28; --on-ink:#0E1411;
+    --qa:#5DC99B; --qa-tint:#153024;
+    --an:#8FB0F1; --an-tint:#19253D;
+    --erp:#E2AD5E; --erp-tint:#33281A;
+    --po:#D897CF; --po-tint:#321F2E;
+    --on-lens:#0E1411;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1411; --surface:#151D19; --sunken:#1D2722;
+  --ink:#E0E7E2; --ink-2:#ADB9B2; --ink-3:#8E9A93;
+  --rule:#35423B; --rule-soft:#232D28; --on-ink:#0E1411;
+  --qa:#5DC99B; --qa-tint:#153024;
+  --an:#8FB0F1; --an-tint:#19253D;
+  --erp:#E2AD5E; --erp-tint:#33281A;
+  --po:#D897CF; --po-tint:#321F2E;
+  --on-lens:#0E1411;
+  color-scheme:dark;
+}
+:root[data-lens="qa"]{--accent:var(--qa);--accent-tint:var(--qa-tint);--on-accent:var(--on-lens)}
+:root[data-lens="analista"]{--accent:var(--an);--accent-tint:var(--an-tint);--on-accent:var(--on-lens)}
+:root[data-lens="erp"]{--accent:var(--erp);--accent-tint:var(--erp-tint);--on-accent:var(--on-lens)}
+:root[data-lens="po"]{--accent:var(--po);--accent-tint:var(--po-tint);--on-accent:var(--on-lens)}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4,p,figure,dl,dd{margin:0}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.page{max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:100;padding:10px 14px;background:var(--ink);color:var(--on-ink);text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+
+/* rótulos de formulário: a voz de documento fiscal */
+.label,.eyebrow,.mini{font-family:var(--f-mono);font-stretch:87.5%;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow{font-size:11px;line-height:1.45}
+.mini{font-size:10.5px;line-height:1.35;margin-bottom:12px}
+.label{font-size:10px;line-height:1.3}
+
+.sw{flex:none;display:inline-block;width:11px;height:11px;border:1.5px solid var(--sw,var(--ink));background:transparent;transition:background-color .2s ease}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:3px;background:transparent;color:var(--ink);font:600 14.5px/1.15 var(--f-body);text-decoration:none;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.btn:hover{background:var(--sunken);text-decoration:none}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent);box-shadow:inset 0 0 0 999px color-mix(in srgb,var(--on-accent) 12%,transparent)}
+.btn-sm{min-height:38px;padding:8px 12px;font-size:13.5px}
+.linkish{background:none;border:0;padding:4px 0;cursor:pointer;font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+
+/* ---------- topo ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:end;padding-block:clamp(28px,6vw,76px) clamp(30px,4vw,52px)}
+.kicker{display:flex;flex-wrap:wrap;gap:4px 16px}
+.kicker span{display:inline-flex;align-items:center;gap:8px}
+.kicker .dot{width:7px;height:7px;background:var(--qa);border-radius:50%}
+.name{margin-top:18px;font-family:var(--f-display);font-weight:800;font-stretch:125%;font-size:clamp(40px,8.2vw,92px);line-height:.92;letter-spacing:-.02em;text-wrap:balance}
+.roles{margin-top:18px;list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:4px 0;font:600 15px/1.45 var(--f-body)}
+.roles li:not(:last-child)::after{content:"/";padding-inline:.6em;color:var(--ink-3);font-weight:400}
+.thesis{margin-top:22px;max-width:34ch;font:400 clamp(19px,2.1vw,23px)/1.4 var(--f-body);text-wrap:pretty}
+.summary{margin-top:12px;max-width:58ch;color:var(--ink-2)}
+.cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+
+.ficha{border:1.5px solid var(--ink);background:var(--surface)}
+.f-head,.f-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:9px 14px}
+.f-head{border-bottom:1.5px solid var(--ink)}
+.f-foot{border-top:1.5px solid var(--ink);justify-content:flex-start;align-items:baseline;font-size:14px}
+.f-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule)}
+.f-grid>div{background:var(--surface);padding:10px 14px 14px;min-width:0}
+.f-grid dd{margin-top:8px}
+.f-val{font-family:var(--f-display);font-weight:700;font-stretch:112.5%;font-size:clamp(28px,3.1vw,38px);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums}
+.f-unit{margin-left:6px;font:600 14px/1 var(--f-body)}
+.f-text{display:block;font-family:var(--f-display);font-weight:700;font-stretch:106%;font-size:17px;line-height:1.2}
+.f-note{display:block;margin-top:6px;font-size:13px;line-height:1.35;color:var(--ink-2)}
+
+/* ---------- corpo em livro-razão: trilho + conteúdo ---------- */
+.ledger{display:grid;grid-template-columns:236px minmax(0,1fr);gap:0 clamp(32px,4vw,64px);border-top:1.5px solid var(--ink)}
+.rail{position:sticky;top:0;align-self:start;min-width:0;max-height:100vh;overflow-y:auto;padding-block:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.rail>*{min-width:0}
+.rail-id b{display:block;font-family:var(--f-display);font-weight:750;font-stretch:112.5%;font-size:17px;line-height:1.15}
+.rail-id span{display:block;margin-top:2px;font-size:13px;color:var(--ink-2)}
+.lens-label{margin-bottom:10px}
+.lens{display:grid;gap:4px}
+.lens-opt{position:relative;display:flex;align-items:center;gap:10px;min-height:42px;padding:8px 10px;border:1px solid transparent;border-radius:3px;font:600 14.5px/1.2 var(--f-body);color:var(--ink-2);cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.lens-opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.lens-opt:hover{color:var(--ink);background:var(--sunken)}
+.lens-opt.is-on{color:var(--ink);background:var(--surface);border-color:var(--rule)}
+.lens-opt.is-on .sw{background:var(--sw,var(--ink))}
+.lens-opt:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.lens-status{margin-top:12px;font-size:13px;line-height:1.45;color:var(--ink-2)}
+.toc{display:grid;gap:1px}
+.toc a{display:block;padding:5px 10px;border-left:2px solid var(--rule);font-size:14px;color:var(--ink-2);text-decoration:none}
+.toc a:hover{color:var(--ink);border-left-color:var(--ink-3)}
+.toc a[aria-current="true"]{color:var(--ink);font-weight:600;border-left-color:var(--accent)}
+.rail-cta{display:grid;gap:8px}
+main{min-width:0}
+
+.sec{padding-block:44px 52px;border-bottom:1px solid var(--rule);scroll-margin-top:8px}
+.sec:last-child{border-bottom:0}
+.sec-head{display:grid;gap:8px;margin-bottom:28px;max-width:74ch}
+.sec h2{font-family:var(--f-display);font-weight:750;font-stretch:112.5%;font-size:clamp(28px,3.4vw,40px);line-height:1.05;letter-spacing:-.015em;text-wrap:balance}
+.sec-lead{color:var(--ink-2);max-width:64ch}
+.block+.block{margin-top:38px}
+
+/* ---------- encaixe ---------- */
+.results{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.results li:last-child,.sg:last-child,.job:last-child,.case:last-child{border-bottom:0}
+.results li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 28px;padding:16px 0;border-bottom:1px solid var(--rule-soft)}
+.r-lead{display:block;font-family:var(--f-display);font-weight:700;font-stretch:106%;font-size:18px;line-height:1.25}
+.r-text{display:block;margin-top:4px;max-width:70ch;color:var(--ink-2)}
+.ltags{display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start;justify-content:flex-end}
+.ltag{font:500 9.5px/1 var(--f-mono);font-stretch:87.5%;letter-spacing:.06em;text-transform:uppercase;color:var(--c);border:1px solid currentColor;padding:4px 5px 3px;white-space:nowrap}
+
+.role-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.role-card{background:var(--surface);padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px}
+.rc-name{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-stretch:112.5%;font-size:19px;line-height:1.15}
+.rc-name .sw{background:var(--sw)}
+.rc-text{flex:1;color:var(--ink-2)}
+.rc-meta{font:500 10px/1.3 var(--f-mono);font-stretch:87.5%;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.rc-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border:1.5px solid var(--sw);border-radius:3px;background:transparent;color:var(--sw);font:600 14px/1.1 var(--f-body);cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.rc-btn:hover{background:var(--sw);color:var(--on-lens)}
+
+.panel.enter{animation:panel-in .3s ease-out}
+@keyframes panel-in{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
+.panel-top{display:grid;gap:10px;margin-bottom:26px;padding-bottom:24px;border-bottom:1.5px solid var(--accent)}
+.panel-top .eyebrow{display:flex;align-items:center;gap:8px}
+.panel-top .sw{background:var(--accent);border-color:var(--accent)}
+.panel-title{font-family:var(--f-display);font-weight:800;font-stretch:118%;font-size:clamp(30px,4.2vw,48px);line-height:1;letter-spacing:-.015em;color:var(--accent);text-wrap:balance}
+.panel-thesis{max-width:52ch;font-size:clamp(18px,1.9vw,21px);line-height:1.45}
+.panel-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:32px 52px}
+.evid{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.evid li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--rule-soft)}
+.tick{width:20px;height:20px;margin-top:2px;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center}
+.tick svg{width:12px;height:12px}
+.e-src{display:block;margin-top:6px}
+.panel-side{display:grid;gap:28px;align-content:start}
+.side-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.side-list li{font-size:14.5px;line-height:1.45}
+.side-list .label{display:block;margin-bottom:2px}
+.side-list a{font-weight:600}
+.side-actions{display:flex;flex-wrap:wrap;gap:8px}
+.geral-actions{margin-top:18px}
+
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 13.5px/1.25 var(--f-body);padding:6px 9px;border:1px solid var(--rule);border-radius:2px;background:var(--surface);color:var(--ink);transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.chip-on{background:var(--accent-tint);border-color:var(--accent)}
+
+/* ---------- competências ---------- */
+.skill-groups{border-top:1.5px solid var(--ink)}
+.sg{display:grid;grid-template-columns:220px minmax(0,1fr);gap:10px 28px;padding-block:18px;border-bottom:1px solid var(--rule-soft)}
+.sg h3{padding-top:7px;font-size:10.5px}
+.sg-count{display:block;margin-top:6px;color:var(--ink-3)}
+:root:not([data-lens="geral"]) .skills .chip[data-match="1"]{background:var(--accent-tint);border-color:var(--accent)}
+:root:not([data-lens="geral"]) .skills .chip[data-match="1"]::before{content:"";display:inline-block;width:6px;height:6px;margin-right:7px;vertical-align:2px;background:var(--accent)}
+:root:not([data-lens="geral"]) .skills .chip[data-match="0"]{background:transparent;border-style:dashed;color:var(--ink-3)}
+
+/* ---------- trajetória ---------- */
+.ruler-scroll{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);-webkit-overflow-scrolling:touch}
+.ruler{min-width:720px;display:grid;grid-template-columns:86px minmax(0,1fr);gap:0 16px;padding:14px 22px 8px 16px}
+.r-labels{display:grid;grid-template-rows:36px 36px;row-gap:10px;align-items:center;padding-top:22px}
+.r-plot{position:relative;display:grid;grid-template-rows:36px 36px 30px;row-gap:10px;padding-top:22px}
+.r-track{position:relative}
+.r-bar{position:absolute;top:0;bottom:0;display:flex;align-items:center;padding-inline:9px;background:var(--ink);color:var(--on-ink);box-shadow:inset -2px 0 0 var(--surface);font:600 12.5px/1 var(--f-body);white-space:nowrap;overflow:hidden;transition:background-color .25s ease,opacity .25s ease,color .25s ease}
+.r-bar.r-edu{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.r-out{position:absolute;top:50%;transform:translateY(-50%);font:600 12.5px/1 var(--f-body);white-space:nowrap}
+.r-out.to-left{transform:translate(calc(-100% - 8px),-50%)}
+.r-out.to-right{margin-left:8px}
+:root:not([data-lens="geral"]) .r-bar[data-match="1"]{background:var(--accent);color:var(--on-accent)}
+:root:not([data-lens="geral"]) .r-bar.r-edu[data-match="1"]{background:var(--accent-tint);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--accent)}
+:root:not([data-lens="geral"]) .r-bar[data-match="0"]{opacity:.3}
+.r-axis{position:relative;border-top:1.5px solid var(--ink)}
+.r-tick{position:absolute;top:0;height:5px;border-left:1px solid var(--ink-3)}
+.r-tick.major{height:9px;border-left-color:var(--ink)}
+.r-year{position:absolute;top:13px;transform:translateX(-50%);font:500 10px/1 var(--f-mono);font-stretch:87.5%;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.r-today{position:absolute;top:18px;bottom:30px;border-left:1.5px dashed var(--accent)}
+.r-today span{position:absolute;top:-16px;right:6px;white-space:nowrap;color:var(--ink-2)}
+.r-short{display:none}
+.ruler-cap{margin-top:10px;font-size:13.5px;color:var(--ink-2);max-width:74ch}
+
+.jobs{margin-top:34px;border-top:1.5px solid var(--ink)}
+.job{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 28px;padding-block:24px;border-bottom:1px solid var(--rule);transition:opacity .25s ease}
+.job-meta{padding-top:6px;display:grid;gap:4px;align-content:start}
+.job-meta .label{font-size:10.5px}
+.job h3{font-family:var(--f-display);font-weight:750;font-stretch:112.5%;font-size:24px;line-height:1.1}
+.job-title{margin-top:6px;font-weight:600}
+.job-about{margin-top:6px;max-width:74ch;font-size:14.5px;color:var(--ink-2)}
+.job-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+.job-list li{position:relative;padding-left:22px;max-width:76ch}
+.job-list li::before{content:"";position:absolute;left:1px;top:.58em;width:9px;height:9px;border:1.5px solid var(--ink-3);transition:background-color .2s ease,border-color .2s ease}
+:root:not([data-lens="geral"]) .job-list li[data-match="1"]::before{background:var(--accent);border-color:var(--accent)}
+:root:not([data-lens="geral"]) .job:not(.expanded) .job-list li[data-match="0"]{display:none}
+:root:not([data-lens="geral"]) .job.expanded .job-list li[data-match="0"]{color:var(--ink-2)}
+:root:not([data-lens="geral"]) .job[data-match="0"] .job-head{opacity:.55}
+.more{margin-top:12px}
+
+/* ---------- cases ---------- */
+.case-list{border-top:1.5px solid var(--ink)}
+.case{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.5fr);gap:14px 44px;padding-block:28px;border-bottom:1px solid var(--rule);scroll-margin-top:12px;transition:opacity .25s ease}
+.case h3{margin-top:8px;font-family:var(--f-display);font-weight:750;font-stretch:112.5%;font-size:clamp(21px,2.2vw,25px);line-height:1.12;text-wrap:balance}
+.metric{text-wrap:balance;margin-top:16px;font-family:var(--f-display);font-weight:800;font-stretch:112.5%;font-size:clamp(22px,2.4vw,28px);line-height:1.1;letter-spacing:-.01em;color:var(--accent);transition:color .25s ease}
+.metric-label{margin-top:4px;font-size:13.5px;color:var(--ink-2)}
+.case .ltags{justify-content:flex-start;margin-top:14px}
+.case-rows{display:grid;gap:12px}
+.case-rows>div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:4px 16px}
+.case-rows dt{padding-top:5px}
+.case-tags{margin-top:4px;font-size:13px;color:var(--ink-3)}
+:root:not([data-lens="geral"]) #cases:not(.show-all) .case[data-match="0"]{display:none}
+:root:not([data-lens="geral"]) #cases.show-all .case[data-match="0"]{opacity:.62}
+.cases-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+
+/* ---------- formação ---------- */
+.edu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 56px}
+.edu-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.edu-list li{padding:14px 0;border-bottom:1px solid var(--rule-soft);transition:color .2s ease}
+.edu-t{font-weight:650;line-height:1.35}
+.edu-o{margin-top:2px;font-size:14.5px;color:var(--ink-2)}
+.edu-p{display:block;margin-top:6px}
+.status{display:inline-block;margin-right:8px;padding:3px 6px 2px;border:1px solid var(--rule);vertical-align:2px}
+.status.done{background:var(--sunken)}
+:root:not([data-lens="geral"]) .edu-list li[data-match="1"] .edu-t::before{content:"";display:inline-block;width:8px;height:8px;margin-right:9px;vertical-align:1px;background:var(--accent)}
+:root:not([data-lens="geral"]) .edu-list li[data-match="0"]{color:var(--ink-3)}
+:root:not([data-lens="geral"]) .edu-list li[data-match="0"] .edu-o{color:var(--ink-3)}
+
+/* ---------- contato ---------- */
+.contact-box{border:1.5px solid var(--ink);background:var(--rule);display:grid;gap:1px}
+.c-row{background:var(--surface);display:grid;grid-template-columns:140px minmax(0,1fr) auto;gap:6px 20px;align-items:center;padding:14px 16px}
+.c-val{font:600 clamp(16px,1.8vw,19px)/1.3 var(--f-body);overflow-wrap:anywhere}
+.c-sub{display:block;margin-top:2px;font-size:13px;font-weight:400;color:var(--ink-2)}
+.c-act{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-block:24px 40px;border-top:1.5px solid var(--ink)}
+.foot a{color:var(--ink-2)}
+.foot-side{text-underline-offset:4px}
+.foot-side:hover{color:var(--ink)}
+
+.toast{position:fixed;left:50%;bottom:20px;z-index:60;max-width:min(92vw,520px);padding:12px 16px;border-radius:3px;background:var(--ink);color:var(--on-ink);font:500 14px/1.4 var(--f-body);opacity:0;transform:translate(-50%,14px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- larguras ---------- */
+@media (max-width:1079.98px){
+  .ledger{grid-template-columns:minmax(0,1fr)}
+  .rail{top:0;z-index:30;max-height:none;overflow:visible;gap:0;margin-inline:calc(var(--gutter) * -1);padding:10px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+  .rail-id,.toc,.rail-cta,.lens-status{display:none}
+  .lens-label{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .lens{display:flex;gap:6px;overflow-x:auto;padding-inline:var(--gutter);scrollbar-width:none}
+  .lens::-webkit-scrollbar{display:none}
+  .rail::after{content:"";position:absolute;top:0;right:0;bottom:1px;width:32px;background:linear-gradient(to right,transparent,var(--paper));pointer-events:none;transition:opacity .2s ease}
+  .rail.lens-end::after{opacity:0}
+  .lens-opt{flex:none;min-height:40px;padding:8px 12px;border-color:var(--rule);background:var(--surface);font-size:14px;white-space:nowrap}
+  .lens-opt.is-on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  .lens-opt.is-on .sw{background:var(--on-accent);border-color:var(--on-accent)}
+  .sec{scroll-margin-top:70px}
+  .case{scroll-margin-top:74px}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);align-items:start}
+  .panel-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .sg,.job,.case{grid-template-columns:minmax(0,1fr)}
+  .job-meta{padding-top:0;display:flex;flex-wrap:wrap;gap:4px 14px}
+  .edu-grid{grid-template-columns:minmax(0,1fr)}
+  .case-rows>div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .case-rows dt{padding-top:0}
+}
+@media (max-width:640px){
+  .f-grid dt{min-height:2.7em}
+  .ruler{min-width:0;grid-template-columns:minmax(0,1fr);padding:10px 12px 6px}
+  .r-labels{display:none}
+  .r-bar,.r-out{font-size:11.5px}
+  .r-bar{padding-inline:6px}
+  .r-long{display:none}
+  .r-short{display:inline}
+  .r-year{font-size:9.5px}
+  .results li{grid-template-columns:minmax(0,1fr)}
+  .results .ltags{justify-content:flex-start}
+  .role-cards{grid-template-columns:minmax(0,1fr)}
+  .c-row{grid-template-columns:minmax(0,1fr)}
+  .c-act{justify-content:flex-start}
+  .cta .btn{flex:1 1 auto}
+}
+@media (max-width:420px){
+  .f-grid>div{padding:9px 11px 12px}
+  .f-val{font-size:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  :root{--paper:#fff;--surface:#fff}
+  .rail,.cta,.btn,.rc-btn,.toast,.more,.skip,.side-actions,#cases-toggle{display:none!important}
+  .ledger{display:block;border-top:0}
+  .sec{padding-block:18px;break-inside:auto}
+  .case,.job,.role-card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+
+<header class="hero" id="topo">
+  <div class="hero-id">
+    <p class="kicker eyebrow"><span><i class="dot" aria-hidden="true"></i>Disponibilidade imediata</span><span>100% remoto em todo o Brasil</span><span>Erechim/RS</span></p>
+    <h1 class="name">Ivan Racoski</h1>
+    <ul class="roles" aria-label="Posicionamento"><li>Analista de Sistemas Sênior</li><li>Analista de Negócio ERP — Fiscal e Contábil</li><li>Automação de Processos</li></ul>
+    <p class="thesis">Traduzo legislação e regra de negócio em requisito de sistema — e valido cada entrega contra essa regra antes de liberar.</p>
+    <p class="summary">16 anos em produtos ERP e 21 anos de vivência em rotinas fiscais e contábeis, com trajetória iniciada dentro de um escritório de contabilidade. Hoje combino análise de negócio, domínio fiscal, automação de testes em Python e PyTest e condução ágil de times.</p>
+    <div class="cta">
+      <a class="btn btn-primary" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Baixar currículo (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/ivanracoski" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.2h6.6v6.6M12.6 3.4 3.6 12.4"/></svg></a>
+      <a class="btn" href="#contato">Contato</a>
+    </div>
+  </div>
+
+  <div class="ficha" aria-label="Ficha profissional">
+    <p class="f-head label"><span>Ficha profissional</span><span>Currículo de setembro de 2026</span></p>
+    <dl class="f-grid">
+      <div>
+        <dt class="label">Produtos ERP</dt>
+        <dd><span class="f-val">16</span><span class="f-unit">anos</span><span class="f-note">Wonder e Questor, 2010⁠–⁠2026</span></dd>
+      </div>
+      <div>
+        <dt class="label">Rotinas fiscais e contábeis</dt>
+        <dd><span class="f-val">21</span><span class="f-unit">anos</span><span class="f-note">desde 2005</span></dd>
+      </div>
+      <div>
+        <dt class="label">NFS-e municipal</dt>
+        <dd><span class="f-val">60+</span><span class="f-unit">layouts</span><span class="f-note">fila histórica zerada</span></dd>
+      </div>
+      <div>
+        <dt class="label">Implantações de ERP</dt>
+        <dd><span class="f-val">~15</span><span class="f-unit">do zero</span><span class="f-note">incluindo matriz e filiais</span></dd>
+      </div>
+      <div>
+        <dt class="label">Scrum Master</dt>
+        <dd><span class="f-val">~4</span><span class="f-unit">anos</span><span class="f-note">times de 4 a 8 pessoas</span></dd>
+      </div>
+      <div>
+        <dt class="label">Formação</dt>
+        <dd><span class="f-text">Ciência da Computação</span><span class="f-note">URI · MBA na PUCRS (set/2026)</span></dd>
+      </div>
+    </dl>
+    <p class="f-foot"><span class="label">Base</span><span>Erechim/RS · atuação 100% remoto em todo o Brasil</span></p>
+  </div>
+</header>
+
+<div class="ledger">
+  <aside class="rail" aria-label="Filtro por vaga e índice">
+    <div class="rail-id"><b>Ivan Racoski</b><span>Analista de Sistemas Sênior</span></div>
+    <div>
+      <p class="lens-label eyebrow" id="lens-label">Ver encaixe para</p>
+      <div class="lens" role="radiogroup" aria-labelledby="lens-label">
+        <label class="lens-opt is-on" style="--sw:var(--ink)"><input type="radio" name="perfil" id="perfil-geral" value="geral" checked><i class="sw" aria-hidden="true"></i><span>Visão geral</span></label>
+        <label class="lens-opt" style="--sw:var(--qa)"><input type="radio" name="perfil" id="perfil-qa" value="qa"><i class="sw" aria-hidden="true"></i><span>QA Automation</span></label>
+        <label class="lens-opt" style="--sw:var(--an)"><input type="radio" name="perfil" id="perfil-analista" value="analista"><i class="sw" aria-hidden="true"></i><span>Analista de Sistemas</span></label>
+        <label class="lens-opt" style="--sw:var(--erp)"><input type="radio" name="perfil" id="perfil-erp" value="erp"><i class="sw" aria-hidden="true"></i><span>ERP Fiscal e Contábil</span></label>
+        <label class="lens-opt" style="--sw:var(--po)"><input type="radio" name="perfil" id="perfil-po" value="po"><i class="sw" aria-hidden="true"></i><span>Product Owner</span></label>
+      </div>
+      <p class="lens-status" id="lens-status">Escolha uma vaga para destacar evidências, competências e cases em toda a página.</p>
+      <p class="vh" id="lens-live" aria-live="polite"></p>
+    </div>
+    <nav class="toc" aria-label="Seções">
+      <a href="#encaixe">Encaixe por vaga</a>
+      <a href="#competencias">Competências</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#cases">Projetos e cases</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="rail-cta">
+      <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo em PDF</a>
+    </div>
+  </aside>
+
+  <main id="conteudo">
+
+    <section class="sec" id="encaixe" aria-labelledby="encaixe-h">
+      <div class="sec-head">
+        <p class="eyebrow">Encaixe por vaga · 4 perfis</p>
+        <h2 id="encaixe-h">Onde meu perfil encaixa</h2>
+      </div>
+
+      <div class="panel" data-panel="geral">
+        <div class="block">
+          <h3 class="mini">Principais resultados</h3>
+          <ul class="results">
+            <li><p><span class="r-lead">De uma sprint para menos de meio dia.</span><span class="r-text">Concebi e especifiquei, em dupla com um desenvolvedor, a solução de layouts configuráveis de NFS-e municipal. O que exigia refinamento, planejamento, sprint de duas semanas e alteração no código-fonte a cada município passou a ser configurado pelo próprio cliente, sem desenvolvimento.</span></p><span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span><span class="ltag" style="--c:var(--po)">PO</span></span></li>
+            <li><p><span class="r-lead">Mais de 60 layouts municipais entregues e fila histórica zerada.</span><span class="r-text">Mapeei layouts e arquivos de teste junto a prefeituras e clientes, configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog.</span></p><span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span><span class="ltag" style="--c:var(--po)">PO</span></span></li>
+            <li><p><span class="r-lead">Quatro entregas estratégicas simultâneas.</span><span class="r-text">Como Scrum Master e analista único de um time de cinco desenvolvedores: migração do Quiu para Cloud, API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e reestruturação da agenda do robô. Prêmio Performei (Questor, 2022).</span></p><span class="ltags"><span class="ltag" style="--c:var(--qa)">QA</span><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--po)">PO</span></span></li>
+            <li><p><span class="r-lead">Regressão manual substituída por suíte automatizada.</span><span class="r-text">Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.</span></p><span class="ltags"><span class="ltag" style="--c:var(--qa)">QA</span></span></li>
+            <li><p><span class="r-lead">Cerca de 15 implantações de ERP conduzidas do zero.</span><span class="r-text">Incluindo estruturas de matriz e filiais, além de mais de 30 clientes atendidos em evoluções — em uma base de mais de 800 clientes ativos e 6.000 usuários.</span></p><span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span></span></li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3 class="mini">Escolha uma vaga para ver o encaixe</h3>
+          <ul class="role-cards">
+            <li class="role-card" style="--sw:var(--qa)">
+              <p class="rc-name"><i class="sw" aria-hidden="true"></i>QA Automation</p>
+              <p class="rc-text">Validação de toda entrega do time, cenários automatizados com o time de Qualidade em Python e PyTest e serviços validados com Postman.</p>
+              <p class="rc-meta">6 evidências · 2 cases · 24 competências</p>
+              <button type="button" class="rc-btn" data-set-lens="qa">Ver encaixe <span aria-hidden="true">→</span></button>
+            </li>
+            <li class="role-card" style="--sw:var(--an)">
+              <p class="rc-name"><i class="sw" aria-hidden="true"></i>Analista de Sistemas</p>
+              <p class="rc-text">16 anos traduzindo necessidade do cliente e legislação em requisito, regra de negócio e validação funcional.</p>
+              <p class="rc-meta">5 evidências · 6 cases · 29 competências</p>
+              <button type="button" class="rc-btn" data-set-lens="analista">Ver encaixe <span aria-hidden="true">→</span></button>
+            </li>
+            <li class="role-card" style="--sw:var(--erp)">
+              <p class="rc-name"><i class="sw" aria-hidden="true"></i>ERP Fiscal e Contábil</p>
+              <p class="rc-text">Da escrita fiscal num escritório de contabilidade às obrigações acessórias dentro do ERP.</p>
+              <p class="rc-meta">6 evidências · 4 cases · 25 competências</p>
+              <button type="button" class="rc-btn" data-set-lens="erp">Ver encaixe <span aria-hidden="true">→</span></button>
+            </li>
+            <li class="role-card" style="--sw:var(--po)">
+              <p class="rc-name"><i class="sw" aria-hidden="true"></i>Product Owner</p>
+              <p class="rc-text">Cargo de analista, atuação de PO: backlog, critério de aceite e uma solução que passou ao cliente o que antes custava uma sprint.</p>
+              <p class="rc-meta">7 evidências · 4 cases · 13 competências</p>
+              <button type="button" class="rc-btn" data-set-lens="po">Ver encaixe <span aria-hidden="true">→</span></button>
+            </li>
+          </ul>
+          <div class="side-actions geral-actions">
+            <button type="button" class="btn btn-sm" data-copy-summary="geral">Copiar resumo do perfil</button>
+            <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo (PDF)</a>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panel="qa" hidden>
+        <div class="panel-top">
+          <p class="eyebrow"><i class="sw" aria-hidden="true"></i>Encaixe para</p>
+          <h3 class="panel-title">QA Automation</h3>
+          <p class="panel-thesis">Na Questor, nenhuma entrega do time do Quiu saía sem a minha validação. Especifiquei dezenas de cenários com o time de Qualidade e passei a automatizá-los junto com ele, em Python e PyTest.</p>
+        </div>
+        <div class="panel-grid">
+          <div>
+            <h4 class="mini">Evidências na trajetória</h4>
+            <ul class="evid">
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Nenhuma entrega do time era liberada sem minha validação.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Validei serviços com Postman nas entregas de integração — API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud — acompanhando versionamento e builds em Jenkins e TortoiseSVN.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Conduzi times de 4 a 8 pessoas com entrega consistente do escopo planejado por sprint e baixo índice de defeitos reportados por clientes.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Usei PL/SQL para consultas, validações e investigação de dados em ambientes Oracle.<span class="e-src label">Wonder Sistemas · 2010–2021</span></p></li>
+            </ul>
+          </div>
+          <div class="panel-side">
+            <div>
+              <h4 class="mini">Competências principais</h4>
+              <ul class="chips"><li class="chip chip-on">Python</li><li class="chip chip-on">PyTest</li><li class="chip chip-on">Playwright</li><li class="chip chip-on">Postman</li><li class="chip chip-on">APIs REST</li><li class="chip chip-on">Testes funcionais e end-to-end</li><li class="chip chip-on">Validação de integrações</li><li class="chip chip-on">Rastreabilidade de cenários</li><li class="chip chip-on">SQL</li><li class="chip chip-on">Jenkins</li><li class="chip chip-on">Git e GitHub</li><li class="chip chip-on">PyCharm</li></ul>
+            </div>
+            <div>
+              <h4 class="mini">Formação e desenvolvimento</h4>
+              <ul class="side-list">
+                <li><span class="label">Formação</span>Bacharelado em Ciência da Computação — URI · 2009 – 2013</li>
+                <li><span class="label">Em andamento</span>Automação de testes com Python, PyTest e Playwright</li>
+                <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini">Cases relacionados</h4>
+              <ul class="side-list">
+                <li><a href="#case-suite">Regressão automatizada com o time de Qualidade</a></li>
+                <li><a href="#case-entregas">Quatro entregas estratégicas em paralelo</a></li>
+              </ul>
+            </div>
+            <div class="side-actions">
+              <button type="button" class="btn btn-sm" data-copy-summary="qa">Copiar resumo deste encaixe</button>
+              <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panel="analista" hidden>
+        <div class="panel-top">
+          <p class="eyebrow"><i class="sw" aria-hidden="true"></i>Encaixe para</p>
+          <h3 class="panel-title">Analista de Sistemas</h3>
+          <p class="panel-thesis">São 16 anos transformando necessidade do cliente e legislação em requisito, regra de negócio e validação funcional dentro de produtos ERP.</p>
+        </div>
+        <div class="panel-grid">
+          <div>
+            <h4 class="mini">Evidências na trajetória</h4>
+            <ul class="evid">
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Respondi pela regra de negócio do Quiu, robô de automação de rotinas contábeis e fiscais utilizado pela maior parte da base de clientes, como analista único de times de 4 a 8 pessoas.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Especifiquei as regras de negócio dos módulos Procedimentos e Maestro — este, um gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Especifiquei a ferramenta Obrigações, que usa OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Conduzi entregas de integração e evolução de plataforma: API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente, atuando como ponte entre a operação do cliente e o time de desenvolvimento.<span class="e-src label">Wonder Sistemas · 2010–2021</span></p></li>
+            </ul>
+          </div>
+          <div class="panel-side">
+            <div>
+              <h4 class="mini">Competências principais</h4>
+              <ul class="chips"><li class="chip chip-on">Levantamento e refinamento de requisitos</li><li class="chip chip-on">Regras de negócio</li><li class="chip chip-on">Análise de inconsistências</li><li class="chip chip-on">Documentação técnica e funcional</li><li class="chip chip-on">Modelagem de processos</li><li class="chip chip-on">Validação funcional</li><li class="chip chip-on">Interface com cliente</li><li class="chip chip-on">Apoio a UX e prototipação em Figma</li><li class="chip chip-on">SQL</li><li class="chip chip-on">APIs REST</li><li class="chip chip-on">XML</li><li class="chip chip-on">Jira</li><li class="chip chip-on">Azure DevOps</li></ul>
+            </div>
+            <div>
+              <h4 class="mini">Formação e desenvolvimento</h4>
+              <ul class="side-list">
+                <li><span class="label">Formação</span>Bacharelado em Ciência da Computação — URI · 2009 – 2013</li>
+                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Set/2026 · conclusão em setembro de 2026</li>
+                <li><span class="label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</li>
+                <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
+                <li><span class="label">Reconhecimento</span>Performei 2022 — Questor Sistemas</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini">Cases relacionados</h4>
+              <ul class="side-list">
+                <li><a href="#case-nfse">Layouts configuráveis de NFS-e municipal</a></li>
+                <li><a href="#case-entregas">Quatro entregas estratégicas em paralelo</a></li>
+                <li><a href="#case-quiu">Quiu: regras do robô de automação fiscal e contábil</a></li>
+                <li><a href="#case-obrigacoes">Obrigações: guias fiscais convertidas em dados</a></li>
+                <li><a href="#case-implantacoes">Implantações de ERP do zero</a></li>
+                <li><a href="#case-dois-times">Dois times em paralelo</a></li>
+              </ul>
+            </div>
+            <div class="side-actions">
+              <button type="button" class="btn btn-sm" data-copy-summary="analista">Copiar resumo deste encaixe</button>
+              <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panel="erp" hidden>
+        <div class="panel-top">
+          <p class="eyebrow"><i class="sw" aria-hidden="true"></i>Encaixe para</p>
+          <h3 class="panel-title">ERP Fiscal e Contábil</h3>
+          <p class="panel-thesis">Comecei na escrita contábil e fiscal em 2005 e, desde 2010, levo esse domínio para dentro de produtos ERP.</p>
+        </div>
+        <div class="panel-grid">
+          <div>
+            <h4 class="mini">Evidências na trajetória</h4>
+            <ul class="evid">
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Executei rotinas de escrita contábil e fiscal, contratos, documentos fiscais e declarações ao fisco como Auxiliar Contábil.<span class="e-src label">Escritório Berto Ltda · 2005–2010</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Conduzi cerca de 15 implantações de ERP do zero, incluindo empresas com estrutura de matriz e filiais, e atendi mais de 30 clientes em evoluções, novos módulos e melhorias.<span class="e-src label">Wonder Sistemas · 2010–2021</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Domínio de todos os módulos do ERP: comercial, compras, financeiro, contábil, fiscal, estoque, serviços, patrimônio, produção, tributação, CRM, BI e Mobile.<span class="e-src label">Wonder Sistemas · 2010–2021</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Concebi a solução de layouts configuráveis de NFS-e municipal: mais de 60 layouts entregues e fila histórica zerada.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Atuei na Sustentação Fiscal em correções de Simples Nacional, SPED e importação de notas fiscais de todas as esferas, priorizando clientes com pendências em aberto junto ao fisco.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Especifiquei as regras de negócio do módulo Procedimentos do Quiu, onde o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+            </ul>
+          </div>
+          <div class="panel-side">
+            <div>
+              <h4 class="mini">Competências principais</h4>
+              <ul class="chips"><li class="chip chip-on">SPED Fiscal</li><li class="chip chip-on">EFD-Contribuições</li><li class="chip chip-on">ECD</li><li class="chip chip-on">ECF</li><li class="chip chip-on">NF-e</li><li class="chip chip-on">NFC-e</li><li class="chip chip-on">NFS-e</li><li class="chip chip-on">CT-e</li><li class="chip chip-on">MDF-e</li><li class="chip chip-on">eSocial</li><li class="chip chip-on">EFD-Reinf</li><li class="chip chip-on">Simples Nacional</li><li class="chip chip-on">Substituição Tributária</li><li class="chip chip-on">ICMS-ST</li><li class="chip chip-on">DIFAL</li><li class="chip chip-on">Escrita contábil e fiscal</li></ul>
+            </div>
+            <div>
+              <h4 class="mini">Formação e desenvolvimento</h4>
+              <ul class="side-list">
+                <li><span class="label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini">Cases relacionados</h4>
+              <ul class="side-list">
+                <li><a href="#case-nfse">Layouts configuráveis de NFS-e municipal</a></li>
+                <li><a href="#case-quiu">Quiu: regras do robô de automação fiscal e contábil</a></li>
+                <li><a href="#case-obrigacoes">Obrigações: guias fiscais convertidas em dados</a></li>
+                <li><a href="#case-implantacoes">Implantações de ERP do zero</a></li>
+              </ul>
+            </div>
+            <div class="side-actions">
+              <button type="button" class="btn btn-sm" data-copy-summary="erp">Copiar resumo deste encaixe</button>
+              <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panel="po" hidden>
+        <div class="panel-top">
+          <p class="eyebrow"><i class="sw" aria-hidden="true"></i>Encaixe para</p>
+          <h3 class="panel-title">Product Owner</h3>
+          <p class="panel-thesis">Meu cargo era Analista de Regra de Negócio Sênior III; a atuação era de Product Owner — backlog, refinamento e critério de aceite. É essa a posição que busco agora.</p>
+        </div>
+        <div class="panel-grid">
+          <div>
+            <h4 class="mini">Evidências na trajetória</h4>
+            <ul class="evid">
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Concebi a solução de layouts configuráveis de NFS-e: incluir um município deixou de exigir refinamento, planejamento e sprint de duas semanas e passou a ser feito pelo próprio cliente, em menos de meio dia.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Respondia pelo critério de aceite: nenhuma entrega do time era liberada sem a minha validação.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Atuei como Scrum Master por cerca de quatro anos, conduzindo refinamento, backlog, cerimônias, planejamento e retrospectivas.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Conduzi quatro entregas estratégicas simultâneas com um time de cinco desenvolvedores, sem comprometer o compromisso das sprints — prêmio Performei 2022.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Acumulei a análise de regra de negócio e o papel de Scrum Master do time de Tecnologia durante as ausências da analista responsável, incluindo uma licença-maternidade de seis meses, conduzindo dois times em paralelo sem perda de cadência.<span class="e-src label">Questor Sistemas · 2021–2026</span></p></li>
+              <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.3 6.3 4.9 8.9 9.8 3.3"/></svg></span><p>Levei demandas de mercado para o desenvolvimento, exercendo papel de analista de negócio na priorização de melhorias do produto.<span class="e-src label">Wonder Sistemas · 2010–2021</span></p></li>
+            </ul>
+          </div>
+          <div class="panel-side">
+            <div>
+              <h4 class="mini">Competências principais</h4>
+              <ul class="chips"><li class="chip chip-on">Gestão de backlog</li><li class="chip chip-on">Refinamento, planejamento e retrospectivas</li><li class="chip chip-on">Scrum</li><li class="chip chip-on">Kanban</li><li class="chip chip-on">Scrum Master</li><li class="chip chip-on">Levantamento e refinamento de requisitos</li><li class="chip chip-on">Regras de negócio</li><li class="chip chip-on">Modelagem de processos</li><li class="chip chip-on">Interface com cliente</li><li class="chip chip-on">Apoio a UX e prototipação em Figma</li><li class="chip chip-on">Jira</li><li class="chip chip-on">Azure DevOps</li></ul>
+            </div>
+            <div>
+              <h4 class="mini">Formação e desenvolvimento</h4>
+              <ul class="side-list">
+                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Set/2026 · conclusão em setembro de 2026</li>
+                <li><span class="label">Em andamento</span>Certificações Scrum PSM I e PSPO I</li>
+                <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
+                <li><span class="label">Reconhecimento</span>Performei 2022 — Questor Sistemas</li>
+                <li><span class="label">Reconhecimento</span>High Talents 2024 e 2022 — Questor Sistemas</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini">Cases relacionados</h4>
+              <ul class="side-list">
+                <li><a href="#case-nfse">Layouts configuráveis de NFS-e municipal</a></li>
+                <li><a href="#case-entregas">Quatro entregas estratégicas em paralelo</a></li>
+                <li><a href="#case-quiu">Quiu: regras do robô de automação fiscal e contábil</a></li>
+                <li><a href="#case-dois-times">Dois times em paralelo</a></li>
+              </ul>
+            </div>
+            <div class="side-actions">
+              <button type="button" class="btn btn-sm" data-copy-summary="po">Copiar resumo deste encaixe</button>
+              <a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Currículo (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec skills" id="competencias" aria-labelledby="competencias-h">
+      <div class="sec-head">
+        <p class="eyebrow" id="skills-eyebrow">56 competências em 5 grupos</p>
+        <h2 id="competencias-h">Competências</h2>
+        <p class="sec-lead">Os cinco grupos do currículo. Ao escolher uma vaga, o que se liga a ela fica marcado e o restante recua.</p>
+      </div>
+      <div class="skill-groups">
+        <div class="sg">
+          <h3 class="label">Domínio Fiscal e Contábil<span class="sg-count">16 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="erp">SPED Fiscal</li><li class="chip" data-lenses="erp">EFD-Contribuições</li><li class="chip" data-lenses="erp">ECD</li><li class="chip" data-lenses="erp">ECF</li><li class="chip" data-lenses="erp">NF-e</li><li class="chip" data-lenses="erp">NFC-e</li><li class="chip" data-lenses="erp">NFS-e</li><li class="chip" data-lenses="erp">CT-e</li><li class="chip" data-lenses="erp">MDF-e</li><li class="chip" data-lenses="erp">eSocial</li><li class="chip" data-lenses="erp">EFD-Reinf</li><li class="chip" data-lenses="erp">Simples Nacional</li><li class="chip" data-lenses="erp">Substituição Tributária</li><li class="chip" data-lenses="erp">ICMS-ST</li><li class="chip" data-lenses="erp">DIFAL</li><li class="chip" data-lenses="erp">Escrita contábil e fiscal</li></ul>
+        </div>
+        <div class="sg">
+          <h3 class="label">Análise de Sistemas e Negócio<span class="sg-count">8 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="analista po">Levantamento e refinamento de requisitos</li><li class="chip" data-lenses="analista erp po">Regras de negócio</li><li class="chip" data-lenses="analista qa erp">Análise de inconsistências</li><li class="chip" data-lenses="analista qa">Documentação técnica e funcional</li><li class="chip" data-lenses="analista po">Modelagem de processos</li><li class="chip" data-lenses="analista qa">Validação funcional</li><li class="chip" data-lenses="analista po erp">Interface com cliente</li><li class="chip" data-lenses="po analista">Apoio a UX e prototipação em Figma</li></ul>
+        </div>
+        <div class="sg">
+          <h3 class="label">Qualidade e Automação<span class="sg-count">10 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="qa">Testes funcionais e end-to-end</li><li class="chip" data-lenses="qa">Python</li><li class="chip" data-lenses="qa">PyTest</li><li class="chip" data-lenses="qa">Playwright</li><li class="chip" data-lenses="qa">PyCharm</li><li class="chip" data-lenses="qa analista">Postman</li><li class="chip" data-lenses="qa analista">APIs REST</li><li class="chip" data-lenses="qa analista">Validação de integrações</li><li class="chip" data-lenses="qa analista">Rastreabilidade de cenários</li><li class="chip" data-lenses="qa">Prevenção de defeitos em produção</li></ul>
+        </div>
+        <div class="sg">
+          <h3 class="label">Dados e Integrações<span class="sg-count">9 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="qa analista erp">SQL</li><li class="chip" data-lenses="analista erp qa">Oracle e PL/SQL</li><li class="chip" data-lenses="analista erp">SQL Server</li><li class="chip" data-lenses="analista">PostgreSQL</li><li class="chip" data-lenses="analista erp">Firebird</li><li class="chip" data-lenses="analista">NoSQL</li><li class="chip" data-lenses="erp analista qa">XML</li><li class="chip" data-lenses="analista">OCR (Tesseract)</li><li class="chip" data-lenses="erp analista">Instalação, backup e restauração de bases</li></ul>
+        </div>
+        <div class="sg">
+          <h3 class="label">Ágil, Produto e Ferramentas<span class="sg-count">13 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="po analista qa">Scrum</li><li class="chip" data-lenses="po analista">Kanban</li><li class="chip" data-lenses="po">Scrum Master</li><li class="chip" data-lenses="po analista">Refinamento, planejamento e retrospectivas</li><li class="chip" data-lenses="po">Gestão de backlog</li><li class="chip" data-lenses="po analista qa">Jira</li><li class="chip" data-lenses="po analista qa">Azure DevOps</li><li class="chip" data-lenses="analista qa">Redmine</li><li class="chip" data-lenses="po">Trello</li><li class="chip" data-lenses="qa analista">Git e GitHub</li><li class="chip" data-lenses="qa analista">TortoiseSVN</li><li class="chip" data-lenses="qa">Jenkins</li><li class="chip" data-lenses="qa">Trunk, branches, tags e builds</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="trajetoria" aria-labelledby="trajetoria-h">
+      <div class="sec-head">
+        <p class="eyebrow">2005 – 2026 · 3 empresas · Erechim/RS</p>
+        <h2 id="trajetoria-h">Trajetória</h2>
+        <p class="sec-lead">Do escritório de contabilidade ao produto ERP: a régua mostra cada período na escala real dos anos.</p>
+      </div>
+      <figure>
+        <div class="ruler-scroll" tabindex="0" aria-label="Linha do tempo de 2005 a 2026">
+          <div class="ruler" role="img" aria-label="Linha do tempo de 2005 a 2026. Escritório Berto Ltda, de janeiro de 2005 a março de 2010; Wonder Sistemas, de março de 2010 a fevereiro de 2021; Questor Sistemas, de fevereiro de 2021 a junho de 2026; Ciência da Computação na URI, de 2009 a 2013; MBA na PUCRS, de agosto de 2025 a setembro de 2026.">
+            <div class="r-labels" aria-hidden="true"><span class="label">Experiência</span><span class="label">Formação</span></div>
+            <div class="r-plot" aria-hidden="true">
+              <div class="r-track">
+                <span class="r-bar" data-lenses="erp" style="left:0.0%;width:23.485%" title="Escritório Berto Ltda · Jan/2005 – Mar/2010"><span class="r-long">Escritório Berto</span><span class="r-short">Berto</span></span>
+                <span class="r-bar" data-lenses="qa analista erp po" style="left:23.485%;width:49.621%" title="Wonder Sistemas · Mar/2010 – Fev/2021"><span class="r-long">Wonder Sistemas</span><span class="r-short">Wonder</span></span>
+                <span class="r-bar" data-lenses="qa analista erp po" style="left:73.106%;width:24.621%" title="Questor Sistemas · Fev/2021 – Jun/2026"><span class="r-long">Questor Sistemas</span><span class="r-short">Questor</span></span>
+              </div>
+              <div class="r-track">
+                <span class="r-bar r-edu" data-lenses="analista qa" style="left:18.182%;width:22.727%" title="Bacharelado em Ciência da Computação · 2009 – 2013"></span>
+                <span class="r-out to-right" style="left:40.909%"><span class="r-long">Ciência da Computação · URI</span><span class="r-short">Computação · URI</span></span>
+                <span class="r-bar r-edu" data-lenses="po analista" style="left:93.561%;width:5.303%" title="MBA em Gestão de Projetos e Metodologias Ágeis · Ago/2025 – Set/2026 · conclusão em setembro de 2026"></span>
+                <span class="r-out to-left" style="left:93.561%"><span class="r-long">MBA · PUCRS</span><span class="r-short">MBA</span></span>
+              </div>
+              <div class="r-axis">
+                <span class="r-tick major" style="left:0.0%"></span><span class="r-year" style="left:0.0%">2005</span>
+                <span class="r-tick" style="left:4.545%"></span>
+                <span class="r-tick" style="left:9.091%"></span>
+                <span class="r-tick" style="left:13.636%"></span>
+                <span class="r-tick" style="left:18.182%"></span>
+                <span class="r-tick major" style="left:22.727%"></span><span class="r-year" style="left:22.727%">2010</span>
+                <span class="r-tick" style="left:27.273%"></span>
+                <span class="r-tick" style="left:31.818%"></span>
+                <span class="r-tick" style="left:36.364%"></span>
+                <span class="r-tick" style="left:40.909%"></span>
+                <span class="r-tick major" style="left:45.455%"></span><span class="r-year" style="left:45.455%">2015</span>
+                <span class="r-tick" style="left:50.0%"></span>
+                <span class="r-tick" style="left:54.545%"></span>
+                <span class="r-tick" style="left:59.091%"></span>
+                <span class="r-tick" style="left:63.636%"></span>
+                <span class="r-tick major" style="left:68.182%"></span><span class="r-year" style="left:68.182%">2020</span>
+                <span class="r-tick" style="left:72.727%"></span>
+                <span class="r-tick" style="left:77.273%"></span>
+                <span class="r-tick" style="left:81.818%"></span>
+                <span class="r-tick" style="left:86.364%"></span>
+                <span class="r-tick major" style="left:90.909%"></span><span class="r-year" style="left:90.909%">2025</span>
+                <span class="r-tick" style="left:95.455%"></span>
+                <span class="r-tick" style="left:100.0%"></span>
+              </div>
+              <span class="r-today" style="left:98.609%"><span class="label">set/2026 · disponível</span></span>
+            </div>
+          </div>
+        </div>
+        <figcaption class="ruler-cap">21 anos de rotinas fiscais e contábeis, dos quais 16 em produtos ERP. A graduação em Ciência da Computação correu em paralelo ao início na Wonder.</figcaption>
+      </figure>
+
+      <div class="jobs">
+        <article class="job" id="job-questor" data-lenses="qa analista erp po">
+          <div class="job-meta job-head"><span class="label">Fev/2021 – Jun/2026</span><span class="label">Erechim/RS</span></div>
+          <div>
+            <div class="job-head">
+              <h3>Questor Sistemas</h3>
+              <p class="job-title">Analista de Regra de Negócio Sênior III | Scrum Master</p><p class="job-about">Software de gestão contábil e fiscal para escritórios de contabilidade e empresas.</p>
+            </div>
+            <ul class="job-list">
+              <li data-lenses="analista erp po">Respondi pela regra de negócio do Quiu, robô de automação de rotinas contábeis e fiscais utilizado pela maior parte da base de clientes, cobrindo agendamento, execução automatizada e customização de tarefas antes feitas manualmente.</li>
+              <li data-lenses="po analista qa">Atuei como Scrum Master por cerca de quatro anos e como analista único de times de 4 a 8 pessoas, conduzindo refinamento, backlog, cerimônias, planejamento e retrospectivas — com entrega consistente do escopo planejado por sprint e baixo índice de defeitos reportados por clientes.</li>
+              <li data-lenses="erp analista po">Concebi e especifiquei a ferramenta de layouts configuráveis de NFS-e municipal, transferindo ao cliente a inclusão de novos municípios e reduzindo o prazo de uma sprint de desenvolvimento para menos de meio dia; configurei pessoalmente mais de 60 layouts prioritários.</li>
+              <li data-lenses="qa">Fui o gate de qualidade do time: nenhuma entrega era liberada sem minha validação. Especifiquei dezenas de cenários automatizados junto ao time de Qualidade e evoluí para construí-los em Python e PyTest, substituindo a regressão manual por execução em VMs dedicadas.</li>
+              <li data-lenses="erp analista">Atuei na Sustentação Fiscal em correções de Simples Nacional, SPED e importação de notas fiscais de todas as esferas, priorizando clientes com pendências em aberto junto ao fisco.</li>
+              <li data-lenses="analista erp po">Especifiquei as regras de negócio dos módulos do Quiu: Procedimentos, onde o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial —, e Maestro, gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos.</li>
+              <li data-lenses="analista erp">Especifiquei a ferramenta Obrigações, que utiliza OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN.</li>
+              <li data-lenses="analista qa">Conduzi entregas de integração e evolução de plataforma — API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud — validando serviços com Postman e acompanhando versionamento e builds em Jenkins e TortoiseSVN.</li>
+              <li data-lenses="po analista">Acumulei a análise de regra de negócio e o papel de Scrum Master do time de Tecnologia durante as ausências da analista responsável, incluindo uma licença-maternidade de seis meses — conduzindo dois times em paralelo sem perda de cadência de entrega.</li>
+            </ul>
+            <button type="button" class="linkish more" hidden aria-expanded="false"></button>
+          </div>
+        </article>
+        <article class="job" id="job-wonder" data-lenses="qa analista erp po">
+          <div class="job-meta job-head"><span class="label">Mar/2010 – Fev/2021</span><span class="label">Erechim/RS</span></div>
+          <div>
+            <div class="job-head">
+              <h3>Wonder Sistemas</h3>
+              <p class="job-title">Analista de Sistemas | Implantação de ERP e Suporte Técnico</p><p class="job-about">ERP para indústria, comércio, distribuição, serviços e agronegócio — mais de 800 clientes ativos e 6.000 usuários. Domínio de todos os módulos: comercial, compras, financeiro, contábil, fiscal, estoque, serviços, patrimônio, produção, tributação, CRM, BI e Mobile.</p>
+            </div>
+            <ul class="job-list">
+              <li data-lenses="erp analista">Iniciei no suporte, atendendo a base completa de clientes ativos, e evoluí para implantação e análise — acumulando as duas frentes conforme a demanda ao longo de onze anos.</li>
+              <li data-lenses="erp analista">Conduzi cerca de 15 implantações de ERP do zero, incluindo empresas com estrutura de matriz e filiais, e atendi mais de 30 clientes em evoluções, novos módulos e melhorias.</li>
+              <li data-lenses="analista po erp">Levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente, atuando como ponte entre a operação do cliente e o time de desenvolvimento.</li>
+              <li data-lenses="erp analista">Treinei equipes inteiras de usuários, incluindo turmas de mais de dez pessoas simultaneamente — como na implantação do módulo Mobile (Força de Vendas) em uma revenda de insumos agrícolas.</li>
+              <li data-lenses="po analista">Levei demandas de mercado para o desenvolvimento, exercendo papel de analista de negócio na priorização de melhorias do produto.</li>
+              <li data-lenses="analista qa erp">Administrei ambientes Oracle — instalação, backup e restauração de bases — e usei PL/SQL para consultas, validações e investigação de dados; apoiei o módulo Mobile em base NoSQL.</li>
+            </ul>
+            <button type="button" class="linkish more" hidden aria-expanded="false"></button>
+          </div>
+        </article>
+        <article class="job" id="job-berto" data-lenses="erp">
+          <div class="job-meta job-head"><span class="label">Jan/2005 – Mar/2010</span><span class="label">Erechim/RS</span></div>
+          <div>
+            <div class="job-head">
+              <h3>Escritório Berto Ltda</h3>
+              <p class="job-title">Auxiliar Contábil</p>
+            </div>
+            <ul class="job-list">
+              <li data-lenses="erp">Executei rotinas de escrita contábil e fiscal, contratos, documentos fiscais e declarações ao fisco — origem do domínio tributário e contábil que hoje sustenta minha atuação em produtos ERP.</li>
+            </ul>
+            <button type="button" class="linkish more" hidden aria-expanded="false"></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="cases" aria-labelledby="cases-h">
+      <div class="sec-head">
+        <p class="eyebrow" id="cases-eyebrow">7 cases · Questor e Wonder</p>
+        <h2 id="cases-h">Projetos e cases</h2>
+        <p class="sec-lead cases-bar"><span>Projetos e resultados descritos no currículo.</span><button type="button" class="linkish" id="cases-toggle" hidden aria-expanded="false"></button></p>
+      </div>
+      <div class="case-list">
+        <article class="case" id="case-nfse" data-lenses="erp analista po">
+          <div>
+            <p class="label">Questor Sistemas</p>
+            <h3>Layouts configuráveis de NFS-e municipal</h3>
+            <p class="metric">1 sprint → menos de ½ dia</p>
+            <p class="metric-label">para incluir um município</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span><span class="ltag" style="--c:var(--po)">PO</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>Cada novo município exigia refinamento, planejamento, sprint de duas semanas e alteração no código-fonte. Solicitações ficavam represadas por anos no backlog.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Concebi e especifiquei a solução em dupla com um desenvolvedor. Mapeei layouts e arquivos de teste junto a prefeituras e clientes e configurei pessoalmente os municípios de maior demanda.</dd></div>
+              <div><dt class="label">Entrega</dt><dd>O próprio cliente passou a incluir um município, sem desenvolvimento, em menos de meio dia. Mais de 60 layouts entregues e fila histórica zerada.</dd></div>
+            </dl>
+            <p class="case-tags">NFS-e · Regras de negócio · Configuração pelo cliente</p>
+          </div>
+        </article>
+        <article class="case" id="case-suite" data-lenses="qa">
+          <div>
+            <p class="label">Questor Sistemas</p>
+            <h3>Regressão automatizada com o time de Qualidade</h3>
+            <p class="metric">Python + PyTest</p>
+            <p class="metric-label">em VMs dedicadas, fora do horário comercial</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--qa)">QA</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>Nenhuma entrega do time era liberada sem minha validação — e a validação manual se repetia a cada sprint.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest.</dd></div>
+              <div><dt class="label">Entrega</dt><dd>A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.</dd></div>
+            </dl>
+            <p class="case-tags">Python · PyTest · Testes funcionais e end-to-end</p>
+          </div>
+        </article>
+        <article class="case" id="case-entregas" data-lenses="po analista qa">
+          <div>
+            <p class="label">Questor Sistemas · Performei 2022</p>
+            <h3>Quatro entregas estratégicas em paralelo</h3>
+            <p class="metric">4 entregas · 5 devs</p>
+            <p class="metric-label">sem comprometer o compromisso das sprints</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--qa)">QA</span><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--po)">PO</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>Um time de cinco desenvolvedores com quatro frentes estratégicas ao mesmo tempo.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Conduzi o time como Scrum Master e analista único, validando serviços com Postman e acompanhando versionamento e builds em Jenkins e TortoiseSVN.</dd></div>
+              <div><dt class="label">Entrega</dt><dd>Migração do Quiu para Cloud, API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e reestruturação da agenda do robô. Reconhecido com o prêmio Performei 2022.</dd></div>
+            </dl>
+            <p class="case-tags">Scrum · APIs REST · Postman · Cloud</p>
+          </div>
+        </article>
+        <article class="case" id="case-quiu" data-lenses="analista erp po">
+          <div>
+            <p class="label">Questor Sistemas</p>
+            <h3>Quiu: regras do robô de automação fiscal e contábil</h3>
+            <p class="metric">Procedimentos + Maestro</p>
+            <p class="metric-label">regras de negócio especificadas</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span><span class="ltag" style="--c:var(--po)">PO</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>O Quiu automatiza rotinas contábeis e fiscais antes feitas manualmente e é utilizado pela maior parte da base de clientes.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Respondi pela regra de negócio do robô e especifiquei as regras dos módulos Procedimentos e Maestro.</dd></div>
+              <div><dt class="label">Módulos</dt><dd>Procedimentos: o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial. Maestro: gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos.</dd></div>
+            </dl>
+            <p class="case-tags">Regras de negócio · NF-e · eSocial · Automação de processos</p>
+          </div>
+        </article>
+        <article class="case" id="case-obrigacoes" data-lenses="analista erp">
+          <div>
+            <p class="label">Questor Sistemas</p>
+            <h3>Obrigações: guias fiscais convertidas em dados</h3>
+            <p class="metric">OCR (Tesseract)</p>
+            <p class="metric-label">lançamento automático no Questor ZEN</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Atuação</dt><dd>Especifiquei a ferramenta Obrigações.</dd></div>
+              <div><dt class="label">Função</dt><dd>Utiliza OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN.</dd></div>
+            </dl>
+            <p class="case-tags">OCR (Tesseract) · Obrigações acessórias</p>
+          </div>
+        </article>
+        <article class="case" id="case-implantacoes" data-lenses="erp analista">
+          <div>
+            <p class="label">Wonder Sistemas</p>
+            <h3>Implantações de ERP do zero</h3>
+            <p class="metric">~15 implantações</p>
+            <p class="metric-label">e mais de 30 clientes em evoluções</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--erp)">ERP</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>ERP para indústria, comércio, distribuição, serviços e agronegócio, com mais de 800 clientes ativos e 6.000 usuários.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Conduzi implantações do zero, incluindo empresas com estrutura de matriz e filiais: levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente.</dd></div>
+              <div><dt class="label">Entrega</dt><dd>Cerca de 15 implantações e mais de 30 clientes atendidos em evoluções, novos módulos e melhorias. Treinei turmas de mais de dez pessoas — como na implantação do módulo Mobile (Força de Vendas) em uma revenda de insumos agrícolas.</dd></div>
+            </dl>
+            <p class="case-tags">Implantação de ERP · Treinamento de usuários · Matriz e filiais</p>
+          </div>
+        </article>
+        <article class="case" id="case-dois-times" data-lenses="po analista">
+          <div>
+            <p class="label">Questor Sistemas</p>
+            <h3>Dois times em paralelo</h3>
+            <p class="metric">6 meses · 2 times</p>
+            <p class="metric-label">sem perda de cadência de entrega</p>
+            <span class="ltags"><span class="ltag" style="--c:var(--an)">Analista</span><span class="ltag" style="--c:var(--po)">PO</span></span>
+          </div>
+          <div>
+            <dl class="case-rows">
+              <div><dt class="label">Contexto</dt><dd>Ausências da analista responsável pelo time de Tecnologia, incluindo uma licença-maternidade de seis meses.</dd></div>
+              <div><dt class="label">Atuação</dt><dd>Acumulei a análise de regra de negócio e o papel de Scrum Master desse time, além do meu.</dd></div>
+              <div><dt class="label">Entrega</dt><dd>Dois times conduzidos em paralelo, sem perda de cadência de entrega.</dd></div>
+            </dl>
+            <p class="case-tags">Scrum Master · Regras de negócio</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="formacao" aria-labelledby="formacao-h">
+      <div class="sec-head">
+        <p class="eyebrow">Acadêmica · desenvolvimento contínuo · idiomas · reconhecimentos</p>
+        <h2 id="formacao-h">Formação</h2>
+      </div>
+      <div class="edu-grid">
+        <div>
+          <h3 class="mini">Formação acadêmica</h3>
+          <ul class="edu-list">
+            <li data-lenses="analista qa"><p class="edu-t">Bacharelado em Ciência da Computação</p><p class="edu-o">URI — Universidade Regional Integrada do Alto Uruguai e das Missões</p><span class="edu-p label">2009 – 2013</span></li>
+            <li data-lenses="po analista"><p class="edu-t">MBA em Gestão de Projetos e Metodologias Ágeis</p><p class="edu-o">PUCRS</p><span class="edu-p label">Ago/2025 – Set/2026 · conclusão em setembro de 2026</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mini">Desenvolvimento contínuo</h3>
+          <ul class="edu-list">
+            <li data-lenses="erp analista"><p class="edu-t"><span class="status label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</p></li>
+            <li data-lenses="po"><p class="edu-t"><span class="status label">Em andamento</span>Certificações Scrum PSM I e PSPO I</p></li>
+            <li data-lenses="qa"><p class="edu-t"><span class="status label">Em andamento</span>Automação de testes com Python, PyTest e Playwright</p></li>
+            <li data-lenses="po analista qa"><p class="edu-t"><span class="status label done">Concluído</span>Treinamento em Jira e Azure DevOps</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mini">Idiomas</h3>
+          <ul class="edu-list">
+            <li><p class="edu-t">Português</p><p class="edu-o">nativo</p></li>
+            <li><p class="edu-t">Inglês</p><p class="edu-o">intermediário (leitura técnica, documentação e escrita)</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mini">Reconhecimentos</h3>
+          <ul class="edu-list">
+            <li data-lenses="po analista"><p class="edu-t">Performei 2022 — Questor Sistemas</p><p class="edu-o">Reconhecimento pelo desempenho como Scrum Master e analista de um time de cinco desenvolvedores, conduzindo quatro entregas estratégicas simultâneas sem comprometer o compromisso das sprints.</p></li>
+            <li data-lenses="po"><p class="edu-t">High Talents 2024 e 2022 — Questor Sistemas</p><p class="edu-o">Programas internos de desenvolvimento com foco em liderança, mindset de gestão, comunicação assertiva, negociação, feedback, resiliência e mapeamento de carreira.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="contato" aria-labelledby="contato-h">
+      <div class="sec-head">
+        <p class="eyebrow">Disponibilidade imediata · 100% remoto em todo o Brasil</p>
+        <h2 id="contato-h">Contato</h2>
+        <p class="sec-lead">Para conversar sobre uma vaga, use o canal mais prático. O currículo completo está em PDF.</p>
+      </div>
+      <div class="contact-box">
+        <div class="c-row">
+          <p class="label">E-mail</p>
+          <p class="c-val">iracoski@gmail.com</p>
+          <div class="c-act"><button type="button" class="btn btn-sm" data-copy="iracoski@gmail.com">Copiar</button><a class="btn btn-sm" href="mailto:iracoski@gmail.com">Escrever</a></div>
+        </div>
+        <div class="c-row">
+          <p class="label">Telefone</p>
+          <p class="c-val">(54) 98125-7248</p>
+          <div class="c-act"><button type="button" class="btn btn-sm" data-copy="(54) 98125-7248">Copiar</button><a class="btn btn-sm" href="tel:+5554981257248">Ligar</a></div>
+        </div>
+        <div class="c-row">
+          <p class="label">LinkedIn</p>
+          <p class="c-val">linkedin.com/in/ivanracoski</p>
+          <div class="c-act"><button type="button" class="btn btn-sm" data-copy="https://www.linkedin.com/in/ivanracoski">Copiar</button><a class="btn btn-sm" href="https://www.linkedin.com/in/ivanracoski" target="_blank" rel="noopener noreferrer">Abrir perfil <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.2h6.6v6.6M12.6 3.4 3.6 12.4"/></svg></a></div>
+        </div>
+        <div class="c-row">
+          <p class="label">Currículo</p>
+          <p class="c-val">Curriculo_Ivan_Racoski.pdf<span class="c-sub">PDF · 2 páginas · 68 KB</span></p>
+          <div class="c-act"><a class="btn btn-primary btn-sm" data-cv href="Curriculo_Ivan_Racoski.pdf" download="Curriculo_Ivan_Racoski.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2v8.1M4.6 7 8 10.4 11.4 7M2.6 13.6h10.8"/></svg>Baixar PDF</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot label">
+  <span>Ivan Racoski · conteúdo conforme o currículo de setembro de 2026</span>
+  <a class="foot-side" href="https://ivanracoski.com/programadordeservicos/">Gerador de programação de serviços</a>
+  <a href="#topo">Voltar ao topo</a>
+</footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="application/json" id="summaries">{"geral": "Ivan Racoski — Analista de Sistemas Sênior | Analista de Negócio ERP — Fiscal e Contábil | Automação de Processos\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\n\n16 anos em produtos ERP e 21 anos de vivência em rotinas fiscais e contábeis, com trajetória iniciada dentro de um escritório de contabilidade. Hoje combino análise de negócio, domínio fiscal, automação de testes em Python e PyTest e condução ágil de times.\n\nPrincipais resultados:\n• De uma sprint para menos de meio dia. Concebi e especifiquei, em dupla com um desenvolvedor, a solução de layouts configuráveis de NFS-e municipal. O que exigia refinamento, planejamento, sprint de duas semanas e alteração no código-fonte a cada município passou a ser configurado pelo próprio cliente, sem desenvolvimento.\n• Mais de 60 layouts municipais entregues e fila histórica zerada. Mapeei layouts e arquivos de teste junto a prefeituras e clientes, configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog.\n• Quatro entregas estratégicas simultâneas. Como Scrum Master e analista único de um time de cinco desenvolvedores: migração do Quiu para Cloud, API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e reestruturação da agenda do robô. Prêmio Performei (Questor, 2022).\n• Regressão manual substituída por suíte automatizada. Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.\n• Cerca de 15 implantações de ERP conduzidas do zero. Incluindo estruturas de matriz e filiais, além de mais de 30 clientes atendidos em evoluções — em uma base de mais de 800 clientes ativos e 6.000 usuários.\n\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "qa": "Ivan Racoski — encaixe para QA Automation\nNa Questor, nenhuma entrega do time do Quiu saía sem a minha validação. Especifiquei dezenas de cenários com o time de Qualidade e passei a automatizá-los junto com ele, em Python e PyTest.\n\n• Nenhuma entrega do time era liberada sem minha validação. (Questor Sistemas · 2021–2026)\n• Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. (Questor Sistemas · 2021–2026)\n• A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint. (Questor Sistemas · 2021–2026)\n• Validei serviços com Postman nas entregas de integração — API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud — acompanhando versionamento e builds em Jenkins e TortoiseSVN. (Questor Sistemas · 2021–2026)\n• Conduzi times de 4 a 8 pessoas com entrega consistente do escopo planejado por sprint e baixo índice de defeitos reportados por clientes. (Questor Sistemas · 2021–2026)\n• Usei PL/SQL para consultas, validações e investigação de dados em ambientes Oracle. (Wonder Sistemas · 2010–2021)\n\nCompetências: Python, PyTest, Playwright, Postman, APIs REST, Testes funcionais e end-to-end, Validação de integrações, Rastreabilidade de cenários, SQL, Jenkins, Git e GitHub, PyCharm\nEm andamento: Automação de testes com Python, PyTest e Playwright\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "analista": "Ivan Racoski — encaixe para Analista de Sistemas\nSão 16 anos transformando necessidade do cliente e legislação em requisito, regra de negócio e validação funcional dentro de produtos ERP.\n\n• Respondi pela regra de negócio do Quiu, robô de automação de rotinas contábeis e fiscais utilizado pela maior parte da base de clientes, como analista único de times de 4 a 8 pessoas. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio dos módulos Procedimentos e Maestro — este, um gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos. (Questor Sistemas · 2021–2026)\n• Especifiquei a ferramenta Obrigações, que usa OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN. (Questor Sistemas · 2021–2026)\n• Conduzi entregas de integração e evolução de plataforma: API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud. (Questor Sistemas · 2021–2026)\n• Levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente, atuando como ponte entre a operação do cliente e o time de desenvolvimento. (Wonder Sistemas · 2010–2021)\n\nCompetências: Levantamento e refinamento de requisitos, Regras de negócio, Análise de inconsistências, Documentação técnica e funcional, Modelagem de processos, Validação funcional, Interface com cliente, Apoio a UX e prototipação em Figma, SQL, APIs REST, XML, Jira, Azure DevOps\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "erp": "Ivan Racoski — encaixe para ERP Fiscal e Contábil\nComecei na escrita contábil e fiscal em 2005 e, desde 2010, levo esse domínio para dentro de produtos ERP.\n\n• Executei rotinas de escrita contábil e fiscal, contratos, documentos fiscais e declarações ao fisco como Auxiliar Contábil. (Escritório Berto Ltda · 2005–2010)\n• Conduzi cerca de 15 implantações de ERP do zero, incluindo empresas com estrutura de matriz e filiais, e atendi mais de 30 clientes em evoluções, novos módulos e melhorias. (Wonder Sistemas · 2010–2021)\n• Domínio de todos os módulos do ERP: comercial, compras, financeiro, contábil, fiscal, estoque, serviços, patrimônio, produção, tributação, CRM, BI e Mobile. (Wonder Sistemas · 2010–2021)\n• Concebi a solução de layouts configuráveis de NFS-e municipal: mais de 60 layouts entregues e fila histórica zerada. (Questor Sistemas · 2021–2026)\n• Atuei na Sustentação Fiscal em correções de Simples Nacional, SPED e importação de notas fiscais de todas as esferas, priorizando clientes com pendências em aberto junto ao fisco. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio do módulo Procedimentos do Quiu, onde o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial. (Questor Sistemas · 2021–2026)\n\nCompetências: SPED Fiscal, EFD-Contribuições, ECD, ECF, NF-e, NFC-e, NFS-e, CT-e, MDF-e, eSocial, EFD-Reinf, Simples Nacional, Substituição Tributária, ICMS-ST, DIFAL, Escrita contábil e fiscal\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "po": "Ivan Racoski — encaixe para Product Owner\nMeu cargo era Analista de Regra de Negócio Sênior III; a atuação era de Product Owner — backlog, refinamento e critério de aceite. É essa a posição que busco agora.\n\n• Concebi a solução de layouts configuráveis de NFS-e: incluir um município deixou de exigir refinamento, planejamento e sprint de duas semanas e passou a ser feito pelo próprio cliente, em menos de meio dia. (Questor Sistemas · 2021–2026)\n• Configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog. (Questor Sistemas · 2021–2026)\n• Respondia pelo critério de aceite: nenhuma entrega do time era liberada sem a minha validação. (Questor Sistemas · 2021–2026)\n• Atuei como Scrum Master por cerca de quatro anos, conduzindo refinamento, backlog, cerimônias, planejamento e retrospectivas. (Questor Sistemas · 2021–2026)\n• Conduzi quatro entregas estratégicas simultâneas com um time de cinco desenvolvedores, sem comprometer o compromisso das sprints — prêmio Performei 2022. (Questor Sistemas · 2021–2026)\n• Acumulei a análise de regra de negócio e o papel de Scrum Master do time de Tecnologia durante as ausências da analista responsável, incluindo uma licença-maternidade de seis meses, conduzindo dois times em paralelo sem perda de cadência. (Questor Sistemas · 2021–2026)\n• Levei demandas de mercado para o desenvolvimento, exercendo papel de analista de negócio na priorização de melhorias do produto. (Wonder Sistemas · 2010–2021)\n\nCompetências: Gestão de backlog, Refinamento, planejamento e retrospectivas, Scrum, Kanban, Scrum Master, Levantamento e refinamento de requisitos, Regras de negócio, Modelagem de processos, Interface com cliente, Apoio a UX e prototipação em Figma, Jira, Azure DevOps\nEm andamento: Certificações Scrum PSM I e PSPO I\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski"}</script>
+<script>
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  if (!root.getAttribute('lang')) root.setAttribute('lang', 'pt-BR');
+
+  var LABELS = {
+    geral: 'Visão geral',
+    qa: 'QA Automation',
+    analista: 'Analista de Sistemas',
+    erp: 'ERP Fiscal e Contábil',
+    po: 'Product Owner'
+  };
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function $(sel, el) { return (el || document).querySelector(sel); }
+  function $$(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+  function hasLens(el, lens) { return (' ' + (el.getAttribute('data-lenses') || '') + ' ').indexOf(' ' + lens + ' ') !== -1; }
+  function matched(list) { return list.filter(function (el) { return el.getAttribute('data-match') === '1'; }).length; }
+
+  var radios = $$('input[name="perfil"]');
+  var tagged = $$('[data-lenses]');
+  var panels = $$('[data-panel]');
+  var cases = $$('.case');
+  var casesSec = $('#cases');
+  var skillChips = $$('#competencias .chip');
+  var lensBox = $('.lens');
+  var rail = $('.rail');
+  var toastEl = $('#toast');
+  var toastTimer = null;
+
+  var SUMMARIES = {};
+  try { SUMMARIES = JSON.parse(($('#summaries') || {}).textContent || '{}'); } catch (e) { SUMMARIES = {}; }
+
+  function toast(msg) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 3400);
+  }
+
+  function casesToggleText(open, hiddenCount) {
+    if (open) return 'Mostrar só os ligados à vaga';
+    return hiddenCount === 1 ? 'Mostrar também o outro case' : 'Mostrar também os outros ' + hiddenCount;
+  }
+
+  function moreText(open, n) {
+    if (open) return n === 1 ? 'Ocultar a outra atividade' : 'Ocultar as outras ' + n + ' atividades';
+    return n === 1 ? 'Ver a outra atividade' : 'Ver as outras ' + n + ' atividades';
+  }
+
+  function lensEdges() {
+    if (!lensBox || !rail) return;
+    var scrollable = lensBox.scrollWidth > lensBox.clientWidth + 1;
+    rail.classList.toggle('lens-end', !scrollable || lensBox.scrollLeft + lensBox.clientWidth >= lensBox.scrollWidth - 2);
+  }
+
+  function revealChip() {
+    if (!lensBox || lensBox.scrollWidth <= lensBox.clientWidth + 1) return;
+    var on = $('.lens-opt.is-on', lensBox);
+    if (!on) return;
+    var box = lensBox.getBoundingClientRect();
+    var r = on.getBoundingClientRect();
+    if (r.left < box.left + 16) lensBox.scrollLeft += r.left - box.left - 16;
+    else if (r.right > box.right - 36) lensBox.scrollLeft += r.right - box.right + 36;
+  }
+
+  function applyLens(lens, opts) {
+    opts = opts || {};
+    if (!Object.prototype.hasOwnProperty.call(LABELS, lens)) lens = 'geral';
+    var all = lens === 'geral';
+
+    root.setAttribute('data-lens', lens);
+    radios.forEach(function (r) {
+      var on = r.value === lens;
+      r.checked = on;
+      var opt = r.closest('.lens-opt');
+      if (opt) opt.classList.toggle('is-on', on);
+    });
+    tagged.forEach(function (el) { el.setAttribute('data-match', all || hasLens(el, lens) ? '1' : '0'); });
+
+    panels.forEach(function (p) {
+      var on = p.getAttribute('data-panel') === lens;
+      p.hidden = !on;
+      if (on && opts.animate && !reduceMotion) {
+        p.classList.remove('enter');
+        void p.offsetWidth;
+        p.classList.add('enter');
+      }
+    });
+
+    var nSkills = matched(skillChips);
+    var se = $('#skills-eyebrow');
+    if (se) se.textContent = all ? skillChips.length + ' competências em 5 grupos' : nSkills + ' de ' + skillChips.length + ' competências ligadas a ' + LABELS[lens];
+    $$('.sg').forEach(function (g) {
+      var chips = $$('.chip', g);
+      var out = $('.sg-count', g);
+      if (out) out.textContent = all ? plural(chips.length, 'item', 'itens') : matched(chips) + ' de ' + chips.length;
+    });
+
+    var nCases = matched(cases);
+    if (casesSec) casesSec.classList.remove('show-all');
+    var ce = $('#cases-eyebrow');
+    if (ce) ce.textContent = all ? cases.length + ' cases · Questor e Wonder' : nCases + ' de ' + cases.length + ' cases ligados a ' + LABELS[lens];
+    var ct = $('#cases-toggle');
+    if (ct) {
+      ct.hidden = all || nCases === cases.length;
+      ct.setAttribute('aria-expanded', 'false');
+      ct.textContent = casesToggleText(false, cases.length - nCases);
+    }
+
+    $$('.job').forEach(function (job) {
+      job.classList.remove('expanded');
+      var n = $$('.job-list li[data-match="0"]', job).length;
+      var btn = $('.more', job);
+      if (!btn) return;
+      btn.hidden = all || n === 0;
+      btn.setAttribute('data-n', String(n));
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = moreText(false, n);
+    });
+
+    var st = $('#lens-status');
+    if (st) {
+      if (all) {
+        st.textContent = 'Escolha uma vaga para destacar evidências, competências e cases em toda a página.';
+      } else {
+        var nEv = $$('[data-panel="' + lens + '"] .evid li').length;
+        st.textContent = 'Destacando ' + plural(nEv, 'evidência', 'evidências') + ', ' + plural(nSkills, 'competência', 'competências') + ' e ' + plural(nCases, 'case', 'cases') + '.';
+      }
+    }
+    if (opts.announce) {
+      var live = $('#lens-live');
+      if (live) live.textContent = all ? 'Mostrando a visão geral.' : 'Mostrando o encaixe para ' + LABELS[lens] + '.';
+    }
+
+    try {
+      var u = new URL(window.location.href);
+      if (all) u.searchParams.delete('perfil'); else u.searchParams.set('perfil', lens);
+      if (u.href !== window.location.href) window.history.replaceState(window.history.state, '', u.href);
+    } catch (e) { /* visualização sem URL própria: segue sem atualizar o endereço */ }
+
+    revealChip();
+    lensEdges();
+
+    if (opts.scroll) {
+      var target = $('#encaixe');
+      if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+
+  function copyText(text) {
+    function fallback() {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      } catch (e) { return false; }
+    }
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return fallback(); });
+      }
+    } catch (e) { /* segue para o método alternativo */ }
+    return Promise.resolve(fallback());
+  }
+
+  function flash(btn, text) {
+    if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);
+    btn.textContent = text;
+    setTimeout(function () { btn.textContent = btn.getAttribute('data-label'); }, 1800);
+  }
+
+  function b64ToBytes(b64) {
+    var bin = window.atob(b64);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  function pdfBlob(href) {
+    var node = document.getElementById('cv-pdf-data');
+    var b64 = node ? node.textContent.replace(/\s+/g, '') : '';
+    if (b64) return Promise.resolve(new Blob([b64ToBytes(b64)], { type: 'application/pdf' }));
+    return fetch(href).then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.blob();
+    });
+  }
+
+  var downloading = false;
+  function handleDownload(ev, link) {
+    var host = window.claude && typeof window.claude.use === 'function';
+    if (!host) {
+      // Arquivo único aberto no celular: gera o PDF a partir da cópia embutida.
+      var embedded = document.getElementById('cv-pdf-data');
+      if (!embedded || !embedded.textContent.trim()) return; // no domínio próprio, o link baixa o arquivo normalmente
+      ev.preventDefault();
+      try {
+        var blobUrl = URL.createObjectURL(new Blob([b64ToBytes(embedded.textContent.replace(/\s+/g, ''))], { type: 'application/pdf' }));
+        var tmp = document.createElement('a');
+        tmp.href = blobUrl;
+        tmp.download = link.getAttribute('download') || 'Curriculo_Ivan_Racoski.pdf';
+        document.body.appendChild(tmp);
+        tmp.click();
+        document.body.removeChild(tmp);
+        setTimeout(function () { URL.revokeObjectURL(blobUrl); }, 10000);
+      } catch (e) {
+        toast('Não foi possível abrir o PDF nesta visualização.');
+      }
+      return;
+    }
+    ev.preventDefault();
+    if (downloading) return;
+    downloading = true;
+    toast('Preparando o currículo em PDF…');
+    var filename = link.getAttribute('download') || 'Curriculo_Ivan_Racoski.pdf';
+    Promise.resolve()
+      .then(function () { return window.claude.use('downloads'); })
+      .then(function (dl) {
+        if (!dl) throw { code: 'unavailable' };
+        return pdfBlob(link.getAttribute('href')).then(function (blob) {
+          return dl.save({ filename: filename, data: blob });
+        });
+      })
+      .then(function (res) {
+        toast(res && res.status === 'delivered' ? 'Currículo enviado.' : 'Currículo baixado.');
+      })
+      .catch(function (err) {
+        var code = err && err.code;
+        if (code === 'declined') toast('Download cancelado.');
+        else if (code === 'rate_limited') toast('Já existe um download aguardando confirmação.');
+        else toast('O download não está disponível nesta visualização. Peça o PDF por e-mail: iracoski@gmail.com');
+      })
+      .then(function () { downloading = false; });
+  }
+
+  radios.forEach(function (r) {
+    r.addEventListener('change', function () {
+      if (r.checked) applyLens(r.value, { announce: true, animate: true });
+    });
+  });
+
+  document.addEventListener('click', function (ev) {
+    var t = ev.target;
+    if (!t || !t.closest) return;
+
+    var setter = t.closest('[data-set-lens]');
+    if (setter) { applyLens(setter.getAttribute('data-set-lens'), { announce: true, animate: true, scroll: true }); return; }
+
+    var more = t.closest('.more');
+    if (more) {
+      var job = more.closest('.job');
+      var open = job.classList.toggle('expanded');
+      more.setAttribute('aria-expanded', open ? 'true' : 'false');
+      more.textContent = moreText(open, +more.getAttribute('data-n'));
+      return;
+    }
+
+    var ct = t.closest('#cases-toggle');
+    if (ct && casesSec) {
+      var showAll = casesSec.classList.toggle('show-all');
+      ct.setAttribute('aria-expanded', showAll ? 'true' : 'false');
+      ct.textContent = casesToggleText(showAll, cases.length - matched(cases));
+      return;
+    }
+
+    var cp = t.closest('[data-copy]');
+    if (cp) {
+      copyText(cp.getAttribute('data-copy')).then(function (ok) {
+        flash(cp, ok ? 'Copiado' : 'Não copiou');
+        if (!ok) toast('Não foi possível copiar. Selecione o texto e copie manualmente.');
+      });
+      return;
+    }
+
+    var cs = t.closest('[data-copy-summary]');
+    if (cs) {
+      var text = SUMMARIES[cs.getAttribute('data-copy-summary')] || '';
+      copyText(text).then(function (ok) {
+        flash(cs, ok ? 'Resumo copiado' : 'Não copiou');
+        toast(ok ? 'Resumo copiado. Cole onde precisar.' : 'Não foi possível copiar o resumo nesta visualização.');
+      });
+      return;
+    }
+
+    var cv = t.closest('a[data-cv]');
+    if (cv) handleDownload(ev, cv);
+  });
+
+  // Índice lateral acompanha a rolagem.
+  var tocLinks = $$('.toc a');
+  if ('IntersectionObserver' in window && tocLinks.length) {
+    var byId = {};
+    tocLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        tocLinks.forEach(function (a) { a.removeAttribute('aria-current'); });
+        var link = byId[en.target.id];
+        if (link) link.setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-30% 0px -62% 0px' });
+    $$('main .sec[id]').forEach(function (s) { io.observe(s); });
+  }
+
+  if (lensBox) {
+    lensBox.addEventListener('scroll', lensEdges, { passive: true });
+    window.addEventListener('resize', lensEdges);
+  }
+
+  var initial = 'geral';
+  try { initial = new URL(window.location.href).searchParams.get('perfil') || 'geral'; } catch (e) { initial = 'geral'; }
+  applyLens(initial, {});
+})();
+</script>
+</body>
+</html>
