@@ -114,6 +114,10 @@ button{font:inherit;color:inherit}
 .f-val{font-family:var(--f-display);font-weight:700;font-stretch:112.5%;font-size:clamp(28px,3.1vw,38px);line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums}
 .f-unit{margin-left:6px;font:600 14px/1 var(--f-body)}
 .f-text{display:block;font-family:var(--f-display);font-weight:700;font-stretch:106%;font-size:17px;line-height:1.2}
+.f-item{display:block}
+.f-item + .f-item{margin-top:11px;padding-top:11px;border-top:1px solid var(--rule-soft)}
+.f-name{display:block;font-family:var(--f-display);font-weight:700;font-stretch:106%;font-size:15.5px;line-height:1.22}
+.f-org{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--ink-2)}
 .f-note{display:block;margin-top:6px;font-size:13px;line-height:1.35;color:var(--ink-2)}
 
 /* ---------- corpo em livro-razão: trilho + conteúdo ---------- */
@@ -346,7 +350,7 @@ main{min-width:0}
   <div class="hero-id">
     <p class="kicker eyebrow"><span><i class="dot" aria-hidden="true"></i>Disponibilidade imediata</span><span>100% remoto em todo o Brasil</span><span>Erechim/RS</span></p>
     <h1 class="name">Ivan Racoski</h1>
-    <ul class="roles" aria-label="Posicionamento"><li>Analista de Sistemas Sênior</li><li>Analista de Negócio ERP — Fiscal e Contábil</li><li>Automação de Processos</li></ul>
+    <ul class="roles" aria-label="Posicionamento"><li>Analista de Sistemas Sênior</li><li>Analista de Negócio ERP — Fiscal e Contábil</li><li>Product Owner</li><li>Scrum Master</li><li>Automação de Processos</li></ul>
     <p class="thesis">Traduzo legislação e regra de negócio em requisito de sistema — e valido cada entrega contra essa regra antes de liberar.</p>
     <p class="summary">16 anos em produtos ERP e 21 anos de vivência em rotinas fiscais e contábeis, com trajetória iniciada dentro de um escritório de contabilidade. Hoje combino análise de negócio, domínio fiscal, automação de testes em Python e PyTest e condução ágil de times.</p>
     <div class="cta">
@@ -381,7 +385,7 @@ main{min-width:0}
       </div>
       <div>
         <dt class="label">Formação</dt>
-        <dd><span class="f-text">Ciência da Computação</span><span class="f-note">URI · MBA na PUCRS (set/2026)</span></dd>
+        <dd><span class="f-item"><span class="f-name">Ciência da Computação</span><span class="f-org">Bacharelado · URI</span></span><span class="f-item"><span class="f-name">MBA em Gestão de Projetos</span><span class="f-org">PUCRS · previsão out/2026</span></span><span class="f-note"></span></dd>
       </div>
     </dl>
     <p class="f-foot"><span class="label">Base</span><span>Erechim/RS · atuação 100% remoto em todo o Brasil</span></p>
@@ -447,7 +451,7 @@ main{min-width:0}
             <li class="role-card" style="--sw:var(--an)">
               <p class="rc-name"><i class="sw" aria-hidden="true"></i>Analista de Sistemas</p>
               <p class="rc-text">16 anos traduzindo necessidade do cliente e legislação em requisito, regra de negócio e validação funcional.</p>
-              <p class="rc-meta">5 evidências · 6 cases · 29 competências</p>
+              <p class="rc-meta">5 evidências · 6 cases · 30 competências</p>
               <button type="button" class="rc-btn" data-set-lens="analista">Ver encaixe <span aria-hidden="true">→</span></button>
             </li>
             <li class="role-card" style="--sw:var(--erp)">
@@ -459,7 +463,7 @@ main{min-width:0}
             <li class="role-card" style="--sw:var(--po)">
               <p class="rc-name"><i class="sw" aria-hidden="true"></i>Product Owner</p>
               <p class="rc-text">Cargo de analista, atuação de PO: backlog, critério de aceite e uma solução que passou ao cliente o que antes custava uma sprint.</p>
-              <p class="rc-meta">7 evidências · 4 cases · 13 competências</p>
+              <p class="rc-meta">7 evidências · 4 cases · 15 competências</p>
               <button type="button" class="rc-btn" data-set-lens="po">Ver encaixe <span aria-hidden="true">→</span></button>
             </li>
           </ul>
@@ -497,6 +501,7 @@ main{min-width:0}
               <ul class="side-list">
                 <li><span class="label">Formação</span>Bacharelado em Ciência da Computação — URI · 2009 – 2013</li>
                 <li><span class="label">Em andamento</span>Automação de testes com Python, PyTest e Playwright</li>
+                <li><span class="label">Em andamento</span>Formação Completa 5.0 — Simplifica Treinamentos</li>
                 <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
               </ul>
             </div>
@@ -540,9 +545,12 @@ main{min-width:0}
               <h4 class="mini">Formação e desenvolvimento</h4>
               <ul class="side-list">
                 <li><span class="label">Formação</span>Bacharelado em Ciência da Computação — URI · 2009 – 2013</li>
-                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Set/2026 · conclusão em setembro de 2026</li>
+                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Out/2026 · conclusão prevista para outubro de 2026</li>
                 <li><span class="label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</li>
+                <li><span class="label">Em andamento</span>Certificação PMP — Project Management Institute</li>
+                <li><span class="label">Em andamento</span>Formação Completa 5.0 — Simplifica Treinamentos</li>
                 <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
+                <li><span class="label">Associação</span>PMI — Project Management Institute — Membro ativo · Capítulo Rio Grande do Sul (PMI-RS)</li>
                 <li><span class="label">Reconhecimento</span>Performei 2022 — Questor Sistemas</li>
               </ul>
             </div>
@@ -591,6 +599,7 @@ main{min-width:0}
               <h4 class="mini">Formação e desenvolvimento</h4>
               <ul class="side-list">
                 <li><span class="label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</li>
+                <li><span class="label">Em andamento</span>Formação Completa 5.0 — Simplifica Treinamentos</li>
               </ul>
             </div>
             <div>
@@ -631,16 +640,19 @@ main{min-width:0}
           <div class="panel-side">
             <div>
               <h4 class="mini">Competências principais</h4>
-              <ul class="chips"><li class="chip chip-on">Gestão de backlog</li><li class="chip chip-on">Refinamento, planejamento e retrospectivas</li><li class="chip chip-on">Scrum</li><li class="chip chip-on">Kanban</li><li class="chip chip-on">Scrum Master</li><li class="chip chip-on">Levantamento e refinamento de requisitos</li><li class="chip chip-on">Regras de negócio</li><li class="chip chip-on">Modelagem de processos</li><li class="chip chip-on">Interface com cliente</li><li class="chip chip-on">Apoio a UX e prototipação em Figma</li><li class="chip chip-on">Jira</li><li class="chip chip-on">Azure DevOps</li></ul>
+              <ul class="chips"><li class="chip chip-on">Discovery</li><li class="chip chip-on">Gestão de backlog</li><li class="chip chip-on">Roadmap</li><li class="chip chip-on">Refinamento, planejamento e retrospectivas</li><li class="chip chip-on">Scrum</li><li class="chip chip-on">Kanban</li><li class="chip chip-on">Scrum Master</li><li class="chip chip-on">Levantamento e refinamento de requisitos</li><li class="chip chip-on">Regras de negócio</li><li class="chip chip-on">Modelagem de processos</li><li class="chip chip-on">Interface com cliente</li><li class="chip chip-on">Apoio a UX e prototipação em Figma</li><li class="chip chip-on">Jira</li><li class="chip chip-on">Azure DevOps</li></ul>
             </div>
             <div>
               <h4 class="mini">Formação e desenvolvimento</h4>
               <ul class="side-list">
-                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Set/2026 · conclusão em setembro de 2026</li>
-                <li><span class="label">Em andamento</span>Certificações Scrum PSM I e PSPO I</li>
+                <li><span class="label">Formação</span>MBA em Gestão de Projetos e Metodologias Ágeis — PUCRS · Ago/2025 – Out/2026 · conclusão prevista para outubro de 2026</li>
+                <li><span class="label">Em andamento</span>Certificação PMP — Project Management Institute</li>
+                <li><span class="label">Em andamento</span>Certificação PSPO I — Scrum.org</li>
+                <li><span class="label">Em andamento</span>Formação Completa 5.0 — Simplifica Treinamentos</li>
                 <li><span class="label">Concluído</span>Treinamento em Jira e Azure DevOps</li>
+                <li><span class="label">Associação</span>PMI — Project Management Institute — Membro ativo · Capítulo Rio Grande do Sul (PMI-RS)</li>
                 <li><span class="label">Reconhecimento</span>Performei 2022 — Questor Sistemas</li>
-                <li><span class="label">Reconhecimento</span>High Talents 2024 e 2022 — Questor Sistemas</li>
+                <li><span class="label">Reconhecimento</span>High Talents 2022, 2023 e 2024 — Questor Sistemas</li>
               </ul>
             </div>
             <div>
@@ -663,7 +675,7 @@ main{min-width:0}
 
     <section class="sec skills" id="competencias" aria-labelledby="competencias-h">
       <div class="sec-head">
-        <p class="eyebrow" id="skills-eyebrow">56 competências em 5 grupos</p>
+        <p class="eyebrow" id="skills-eyebrow">58 competências em 5 grupos</p>
         <h2 id="competencias-h">Competências</h2>
         <p class="sec-lead">Os cinco grupos do currículo. Ao escolher uma vaga, o que se liga a ela fica marcado e o restante recua.</p>
       </div>
@@ -685,8 +697,8 @@ main{min-width:0}
           <ul class="chips"><li class="chip" data-lenses="qa analista erp">SQL</li><li class="chip" data-lenses="analista erp qa">Oracle e PL/SQL</li><li class="chip" data-lenses="analista erp">SQL Server</li><li class="chip" data-lenses="analista">PostgreSQL</li><li class="chip" data-lenses="analista erp">Firebird</li><li class="chip" data-lenses="analista">NoSQL</li><li class="chip" data-lenses="erp analista qa">XML</li><li class="chip" data-lenses="analista">OCR (Tesseract)</li><li class="chip" data-lenses="erp analista">Instalação, backup e restauração de bases</li></ul>
         </div>
         <div class="sg">
-          <h3 class="label">Ágil, Produto e Ferramentas<span class="sg-count">13 itens</span></h3>
-          <ul class="chips"><li class="chip" data-lenses="po analista qa">Scrum</li><li class="chip" data-lenses="po analista">Kanban</li><li class="chip" data-lenses="po">Scrum Master</li><li class="chip" data-lenses="po analista">Refinamento, planejamento e retrospectivas</li><li class="chip" data-lenses="po">Gestão de backlog</li><li class="chip" data-lenses="po analista qa">Jira</li><li class="chip" data-lenses="po analista qa">Azure DevOps</li><li class="chip" data-lenses="analista qa">Redmine</li><li class="chip" data-lenses="po">Trello</li><li class="chip" data-lenses="qa analista">Git e GitHub</li><li class="chip" data-lenses="qa analista">TortoiseSVN</li><li class="chip" data-lenses="qa">Jenkins</li><li class="chip" data-lenses="qa">Trunk, branches, tags e builds</li></ul>
+          <h3 class="label">Ágil, Produto e Ferramentas<span class="sg-count">15 itens</span></h3>
+          <ul class="chips"><li class="chip" data-lenses="po analista qa">Scrum</li><li class="chip" data-lenses="po analista">Kanban</li><li class="chip" data-lenses="po">Scrum Master</li><li class="chip" data-lenses="po analista">Refinamento, planejamento e retrospectivas</li><li class="chip" data-lenses="po">Gestão de backlog</li><li class="chip" data-lenses="po analista">Discovery</li><li class="chip" data-lenses="po">Roadmap</li><li class="chip" data-lenses="po analista qa">Jira</li><li class="chip" data-lenses="po analista qa">Azure DevOps</li><li class="chip" data-lenses="analista qa">Redmine</li><li class="chip" data-lenses="po">Trello</li><li class="chip" data-lenses="qa analista">Git e GitHub</li><li class="chip" data-lenses="qa analista">TortoiseSVN</li><li class="chip" data-lenses="qa">Jenkins</li><li class="chip" data-lenses="qa">Trunk, branches, tags e builds</li></ul>
         </div>
       </div>
     </section>
@@ -699,7 +711,7 @@ main{min-width:0}
       </div>
       <figure>
         <div class="ruler-scroll" tabindex="0" aria-label="Linha do tempo de 2005 a 2026">
-          <div class="ruler" role="img" aria-label="Linha do tempo de 2005 a 2026. Escritório Berto Ltda, de janeiro de 2005 a março de 2010; Wonder Sistemas, de março de 2010 a fevereiro de 2021; Questor Sistemas, de fevereiro de 2021 a junho de 2026; Ciência da Computação na URI, de 2009 a 2013; MBA na PUCRS, de agosto de 2025 a setembro de 2026.">
+          <div class="ruler" role="img" aria-label="Linha do tempo de 2005 a 2026. Escritório Berto Ltda, de janeiro de 2005 a março de 2010; Wonder Sistemas, de março de 2010 a fevereiro de 2021; Questor Sistemas, de fevereiro de 2021 a junho de 2026; Bacharelado em Ciência da Computação, de janeiro de 2009 a dezembro de 2013; MBA em Gestão de Projetos e Metodologias Ágeis, de agosto de 2025 a outubro de 2026.">
             <div class="r-labels" aria-hidden="true"><span class="label">Experiência</span><span class="label">Formação</span></div>
             <div class="r-plot" aria-hidden="true">
               <div class="r-track">
@@ -710,7 +722,7 @@ main{min-width:0}
               <div class="r-track">
                 <span class="r-bar r-edu" data-lenses="analista qa" style="left:18.182%;width:22.727%" title="Bacharelado em Ciência da Computação · 2009 – 2013"></span>
                 <span class="r-out to-right" style="left:40.909%"><span class="r-long">Ciência da Computação · URI</span><span class="r-short">Computação · URI</span></span>
-                <span class="r-bar r-edu" data-lenses="po analista" style="left:93.561%;width:5.303%" title="MBA em Gestão de Projetos e Metodologias Ágeis · Ago/2025 – Set/2026 · conclusão em setembro de 2026"></span>
+                <span class="r-bar r-edu" data-lenses="po analista" style="left:93.561%;width:5.681%" title="MBA em Gestão de Projetos e Metodologias Ágeis · Ago/2025 – Out/2026 · conclusão prevista para outubro de 2026"></span>
                 <span class="r-out to-left" style="left:93.561%"><span class="r-long">MBA · PUCRS</span><span class="r-short">MBA</span></span>
               </div>
               <div class="r-axis">
@@ -738,7 +750,7 @@ main{min-width:0}
                 <span class="r-tick" style="left:95.455%"></span>
                 <span class="r-tick" style="left:100.0%"></span>
               </div>
-              <span class="r-today" style="left:98.609%"><span class="label">set/2026 · disponível</span></span>
+              <span class="r-today" style="left:98.834%"><span class="label">set/2026 · disponível</span></span>
             </div>
           </div>
         </div>
@@ -931,7 +943,7 @@ main{min-width:0}
 
     <section class="sec" id="formacao" aria-labelledby="formacao-h">
       <div class="sec-head">
-        <p class="eyebrow">Acadêmica · desenvolvimento contínuo · idiomas · reconhecimentos</p>
+        <p class="eyebrow">Acadêmica · desenvolvimento contínuo · associações · idiomas · reconhecimentos</p>
         <h2 id="formacao-h">Formação</h2>
       </div>
       <div class="edu-grid">
@@ -939,16 +951,24 @@ main{min-width:0}
           <h3 class="mini">Formação acadêmica</h3>
           <ul class="edu-list">
             <li data-lenses="analista qa"><p class="edu-t">Bacharelado em Ciência da Computação</p><p class="edu-o">URI — Universidade Regional Integrada do Alto Uruguai e das Missões</p><span class="edu-p label">2009 – 2013</span></li>
-            <li data-lenses="po analista"><p class="edu-t">MBA em Gestão de Projetos e Metodologias Ágeis</p><p class="edu-o">PUCRS</p><span class="edu-p label">Ago/2025 – Set/2026 · conclusão em setembro de 2026</span></li>
+            <li data-lenses="po analista"><p class="edu-t">MBA em Gestão de Projetos e Metodologias Ágeis</p><p class="edu-o">PUCRS</p><span class="edu-p label">Ago/2025 – Out/2026 · conclusão prevista para outubro de 2026</span></li>
           </ul>
         </div>
         <div>
           <h3 class="mini">Desenvolvimento contínuo</h3>
           <ul class="edu-list">
             <li data-lenses="erp analista"><p class="edu-t"><span class="status label">Em andamento</span>Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais</p></li>
-            <li data-lenses="po"><p class="edu-t"><span class="status label">Em andamento</span>Certificações Scrum PSM I e PSPO I</p></li>
+            <li data-lenses="po analista"><p class="edu-t"><span class="status label">Em andamento</span>Certificação PMP — Project Management Institute</p></li>
+            <li data-lenses="po"><p class="edu-t"><span class="status label">Em andamento</span>Certificação PSPO I — Scrum.org</p></li>
             <li data-lenses="qa"><p class="edu-t"><span class="status label">Em andamento</span>Automação de testes com Python, PyTest e Playwright</p></li>
+            <li data-lenses="qa analista po erp"><p class="edu-t"><span class="status label">Em andamento</span>Formação Completa 5.0 — Simplifica Treinamentos</p><p class="edu-o">Inteligência artificial aplicada ao trabalho (ChatGPT, Gemini, Claude, Copilot), automação com N8N, Excel, Power BI e Power Automate</p></li>
             <li data-lenses="po analista qa"><p class="edu-t"><span class="status label done">Concluído</span>Treinamento em Jira e Azure DevOps</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mini">Associações</h3>
+          <ul class="edu-list">
+            <li data-lenses="po analista"><p class="edu-t">PMI — Project Management Institute</p><p class="edu-o">Membro ativo · Capítulo Rio Grande do Sul (PMI-RS)</p></li>
           </ul>
         </div>
         <div>
@@ -962,7 +982,7 @@ main{min-width:0}
           <h3 class="mini">Reconhecimentos</h3>
           <ul class="edu-list">
             <li data-lenses="po analista"><p class="edu-t">Performei 2022 — Questor Sistemas</p><p class="edu-o">Reconhecimento pelo desempenho como Scrum Master e analista de um time de cinco desenvolvedores, conduzindo quatro entregas estratégicas simultâneas sem comprometer o compromisso das sprints.</p></li>
-            <li data-lenses="po"><p class="edu-t">High Talents 2024 e 2022 — Questor Sistemas</p><p class="edu-o">Programas internos de desenvolvimento com foco em liderança, mindset de gestão, comunicação assertiva, negociação, feedback, resiliência e mapeamento de carreira.</p></li>
+            <li data-lenses="po"><p class="edu-t">High Talents 2022, 2023 e 2024 — Questor Sistemas</p><p class="edu-o">Programas internos de desenvolvimento com foco em liderança, mindset de gestão, comunicação assertiva, negociação, feedback, resiliência e mapeamento de carreira.</p></li>
           </ul>
         </div>
       </div>
@@ -1009,7 +1029,7 @@ main{min-width:0}
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script type="application/json" id="summaries">{"geral": "Ivan Racoski — Analista de Sistemas Sênior | Analista de Negócio ERP — Fiscal e Contábil | Automação de Processos\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\n\n16 anos em produtos ERP e 21 anos de vivência em rotinas fiscais e contábeis, com trajetória iniciada dentro de um escritório de contabilidade. Hoje combino análise de negócio, domínio fiscal, automação de testes em Python e PyTest e condução ágil de times.\n\nPrincipais resultados:\n• De uma sprint para menos de meio dia. Concebi e especifiquei, em dupla com um desenvolvedor, a solução de layouts configuráveis de NFS-e municipal. O que exigia refinamento, planejamento, sprint de duas semanas e alteração no código-fonte a cada município passou a ser configurado pelo próprio cliente, sem desenvolvimento.\n• Mais de 60 layouts municipais entregues e fila histórica zerada. Mapeei layouts e arquivos de teste junto a prefeituras e clientes, configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog.\n• Quatro entregas estratégicas simultâneas. Como Scrum Master e analista único de um time de cinco desenvolvedores: migração do Quiu para Cloud, API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e reestruturação da agenda do robô. Prêmio Performei (Questor, 2022).\n• Regressão manual substituída por suíte automatizada. Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.\n• Cerca de 15 implantações de ERP conduzidas do zero. Incluindo estruturas de matriz e filiais, além de mais de 30 clientes atendidos em evoluções — em uma base de mais de 800 clientes ativos e 6.000 usuários.\n\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "qa": "Ivan Racoski — encaixe para QA Automation\nNa Questor, nenhuma entrega do time do Quiu saía sem a minha validação. Especifiquei dezenas de cenários com o time de Qualidade e passei a automatizá-los junto com ele, em Python e PyTest.\n\n• Nenhuma entrega do time era liberada sem minha validação. (Questor Sistemas · 2021–2026)\n• Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. (Questor Sistemas · 2021–2026)\n• A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint. (Questor Sistemas · 2021–2026)\n• Validei serviços com Postman nas entregas de integração — API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud — acompanhando versionamento e builds em Jenkins e TortoiseSVN. (Questor Sistemas · 2021–2026)\n• Conduzi times de 4 a 8 pessoas com entrega consistente do escopo planejado por sprint e baixo índice de defeitos reportados por clientes. (Questor Sistemas · 2021–2026)\n• Usei PL/SQL para consultas, validações e investigação de dados em ambientes Oracle. (Wonder Sistemas · 2010–2021)\n\nCompetências: Python, PyTest, Playwright, Postman, APIs REST, Testes funcionais e end-to-end, Validação de integrações, Rastreabilidade de cenários, SQL, Jenkins, Git e GitHub, PyCharm\nEm andamento: Automação de testes com Python, PyTest e Playwright\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "analista": "Ivan Racoski — encaixe para Analista de Sistemas\nSão 16 anos transformando necessidade do cliente e legislação em requisito, regra de negócio e validação funcional dentro de produtos ERP.\n\n• Respondi pela regra de negócio do Quiu, robô de automação de rotinas contábeis e fiscais utilizado pela maior parte da base de clientes, como analista único de times de 4 a 8 pessoas. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio dos módulos Procedimentos e Maestro — este, um gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos. (Questor Sistemas · 2021–2026)\n• Especifiquei a ferramenta Obrigações, que usa OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN. (Questor Sistemas · 2021–2026)\n• Conduzi entregas de integração e evolução de plataforma: API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud. (Questor Sistemas · 2021–2026)\n• Levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente, atuando como ponte entre a operação do cliente e o time de desenvolvimento. (Wonder Sistemas · 2010–2021)\n\nCompetências: Levantamento e refinamento de requisitos, Regras de negócio, Análise de inconsistências, Documentação técnica e funcional, Modelagem de processos, Validação funcional, Interface com cliente, Apoio a UX e prototipação em Figma, SQL, APIs REST, XML, Jira, Azure DevOps\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "erp": "Ivan Racoski — encaixe para ERP Fiscal e Contábil\nComecei na escrita contábil e fiscal em 2005 e, desde 2010, levo esse domínio para dentro de produtos ERP.\n\n• Executei rotinas de escrita contábil e fiscal, contratos, documentos fiscais e declarações ao fisco como Auxiliar Contábil. (Escritório Berto Ltda · 2005–2010)\n• Conduzi cerca de 15 implantações de ERP do zero, incluindo empresas com estrutura de matriz e filiais, e atendi mais de 30 clientes em evoluções, novos módulos e melhorias. (Wonder Sistemas · 2010–2021)\n• Domínio de todos os módulos do ERP: comercial, compras, financeiro, contábil, fiscal, estoque, serviços, patrimônio, produção, tributação, CRM, BI e Mobile. (Wonder Sistemas · 2010–2021)\n• Concebi a solução de layouts configuráveis de NFS-e municipal: mais de 60 layouts entregues e fila histórica zerada. (Questor Sistemas · 2021–2026)\n• Atuei na Sustentação Fiscal em correções de Simples Nacional, SPED e importação de notas fiscais de todas as esferas, priorizando clientes com pendências em aberto junto ao fisco. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio do módulo Procedimentos do Quiu, onde o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial. (Questor Sistemas · 2021–2026)\n\nCompetências: SPED Fiscal, EFD-Contribuições, ECD, ECF, NF-e, NFC-e, NFS-e, CT-e, MDF-e, eSocial, EFD-Reinf, Simples Nacional, Substituição Tributária, ICMS-ST, DIFAL, Escrita contábil e fiscal\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "po": "Ivan Racoski — encaixe para Product Owner\nMeu cargo era Analista de Regra de Negócio Sênior III; a atuação era de Product Owner — backlog, refinamento e critério de aceite. É essa a posição que busco agora.\n\n• Concebi a solução de layouts configuráveis de NFS-e: incluir um município deixou de exigir refinamento, planejamento e sprint de duas semanas e passou a ser feito pelo próprio cliente, em menos de meio dia. (Questor Sistemas · 2021–2026)\n• Configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog. (Questor Sistemas · 2021–2026)\n• Respondia pelo critério de aceite: nenhuma entrega do time era liberada sem a minha validação. (Questor Sistemas · 2021–2026)\n• Atuei como Scrum Master por cerca de quatro anos, conduzindo refinamento, backlog, cerimônias, planejamento e retrospectivas. (Questor Sistemas · 2021–2026)\n• Conduzi quatro entregas estratégicas simultâneas com um time de cinco desenvolvedores, sem comprometer o compromisso das sprints — prêmio Performei 2022. (Questor Sistemas · 2021–2026)\n• Acumulei a análise de regra de negócio e o papel de Scrum Master do time de Tecnologia durante as ausências da analista responsável, incluindo uma licença-maternidade de seis meses, conduzindo dois times em paralelo sem perda de cadência. (Questor Sistemas · 2021–2026)\n• Levei demandas de mercado para o desenvolvimento, exercendo papel de analista de negócio na priorização de melhorias do produto. (Wonder Sistemas · 2010–2021)\n\nCompetências: Gestão de backlog, Refinamento, planejamento e retrospectivas, Scrum, Kanban, Scrum Master, Levantamento e refinamento de requisitos, Regras de negócio, Modelagem de processos, Interface com cliente, Apoio a UX e prototipação em Figma, Jira, Azure DevOps\nEm andamento: Certificações Scrum PSM I e PSPO I\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski"}</script>
+<script type="application/json" id="summaries">{"geral": "Ivan Racoski — Analista de Sistemas Sênior | Analista de Negócio ERP — Fiscal e Contábil | Product Owner | Scrum Master | Automação de Processos\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\n\n16 anos em produtos ERP e 21 anos de vivência em rotinas fiscais e contábeis, com trajetória iniciada dentro de um escritório de contabilidade. Hoje combino análise de negócio, domínio fiscal, automação de testes em Python e PyTest e condução ágil de times.\n\nPrincipais resultados:\n• De uma sprint para menos de meio dia. Concebi e especifiquei, em dupla com um desenvolvedor, a solução de layouts configuráveis de NFS-e municipal. O que exigia refinamento, planejamento, sprint de duas semanas e alteração no código-fonte a cada município passou a ser configurado pelo próprio cliente, sem desenvolvimento.\n• Mais de 60 layouts municipais entregues e fila histórica zerada. Mapeei layouts e arquivos de teste junto a prefeituras e clientes, configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog.\n• Quatro entregas estratégicas simultâneas. Como Scrum Master e analista único de um time de cinco desenvolvedores: migração do Quiu para Cloud, API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e reestruturação da agenda do robô. Prêmio Performei (Questor, 2022).\n• Regressão manual substituída por suíte automatizada. Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint.\n• Cerca de 15 implantações de ERP conduzidas do zero. Incluindo estruturas de matriz e filiais, além de mais de 30 clientes atendidos em evoluções — em uma base de mais de 800 clientes ativos e 6.000 usuários.\n\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "qa": "Ivan Racoski — encaixe para QA Automation\nNa Questor, nenhuma entrega do time do Quiu saía sem a minha validação. Especifiquei dezenas de cenários com o time de Qualidade e passei a automatizá-los junto com ele, em Python e PyTest.\n\n• Nenhuma entrega do time era liberada sem minha validação. (Questor Sistemas · 2021–2026)\n• Especifiquei dezenas de cenários de teste automatizados junto ao time de Qualidade e passei a construí-los com o time, em Python e PyTest. (Questor Sistemas · 2021–2026)\n• A suíte roda em VMs dedicadas fora do horário comercial e eliminou a validação manual repetida a cada sprint. (Questor Sistemas · 2021–2026)\n• Validei serviços com Postman nas entregas de integração — API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud — acompanhando versionamento e builds em Jenkins e TortoiseSVN. (Questor Sistemas · 2021–2026)\n• Conduzi times de 4 a 8 pessoas com entrega consistente do escopo planejado por sprint e baixo índice de defeitos reportados por clientes. (Questor Sistemas · 2021–2026)\n• Usei PL/SQL para consultas, validações e investigação de dados em ambientes Oracle. (Wonder Sistemas · 2010–2021)\n\nCompetências: Python, PyTest, Playwright, Postman, APIs REST, Testes funcionais e end-to-end, Validação de integrações, Rastreabilidade de cenários, SQL, Jenkins, Git e GitHub, PyCharm\nEm andamento: Automação de testes com Python, PyTest e Playwright; Formação Completa 5.0 — Simplifica Treinamentos\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "analista": "Ivan Racoski — encaixe para Analista de Sistemas\nSão 16 anos transformando necessidade do cliente e legislação em requisito, regra de negócio e validação funcional dentro de produtos ERP.\n\n• Respondi pela regra de negócio do Quiu, robô de automação de rotinas contábeis e fiscais utilizado pela maior parte da base de clientes, como analista único de times de 4 a 8 pessoas. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio dos módulos Procedimentos e Maestro — este, um gerenciador autônomo de filas que ordena a execução, evita sobrecarga do ambiente, reprocessa falhas pontuais e registra o histórico de processos. (Questor Sistemas · 2021–2026)\n• Especifiquei a ferramenta Obrigações, que usa OCR (Tesseract) para converter guias e obrigações acessórias em dados e lançá-las automaticamente no Questor ZEN. (Questor Sistemas · 2021–2026)\n• Conduzi entregas de integração e evolução de plataforma: API de baixa de pagamentos e-CAC, API de mapeamento de pesquisas e migração do Quiu para Cloud. (Questor Sistemas · 2021–2026)\n• Levantei necessidades, analisei processos e adequei o sistema às regras de negócio de cada cliente, atuando como ponte entre a operação do cliente e o time de desenvolvimento. (Wonder Sistemas · 2010–2021)\n\nCompetências: Levantamento e refinamento de requisitos, Regras de negócio, Análise de inconsistências, Documentação técnica e funcional, Modelagem de processos, Validação funcional, Interface com cliente, Apoio a UX e prototipação em Figma, SQL, APIs REST, XML, Jira, Azure DevOps\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais; Certificação PMP — Project Management Institute; Formação Completa 5.0 — Simplifica Treinamentos\nAssociações: PMI — Project Management Institute — Membro ativo · Capítulo Rio Grande do Sul (PMI-RS)\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "erp": "Ivan Racoski — encaixe para ERP Fiscal e Contábil\nComecei na escrita contábil e fiscal em 2005 e, desde 2010, levo esse domínio para dentro de produtos ERP.\n\n• Executei rotinas de escrita contábil e fiscal, contratos, documentos fiscais e declarações ao fisco como Auxiliar Contábil. (Escritório Berto Ltda · 2005–2010)\n• Conduzi cerca de 15 implantações de ERP do zero, incluindo empresas com estrutura de matriz e filiais, e atendi mais de 30 clientes em evoluções, novos módulos e melhorias. (Wonder Sistemas · 2010–2021)\n• Domínio de todos os módulos do ERP: comercial, compras, financeiro, contábil, fiscal, estoque, serviços, patrimônio, produção, tributação, CRM, BI e Mobile. (Wonder Sistemas · 2010–2021)\n• Concebi a solução de layouts configuráveis de NFS-e municipal: mais de 60 layouts entregues e fila histórica zerada. (Questor Sistemas · 2021–2026)\n• Atuei na Sustentação Fiscal em correções de Simples Nacional, SPED e importação de notas fiscais de todas as esferas, priorizando clientes com pendências em aberto junto ao fisco. (Questor Sistemas · 2021–2026)\n• Especifiquei as regras de negócio do módulo Procedimentos do Quiu, onde o cliente agenda e configura rotinas fiscais, contábeis e de folha — importação de NF-e, apuração de impostos, eSocial. (Questor Sistemas · 2021–2026)\n\nCompetências: SPED Fiscal, EFD-Contribuições, ECD, ECF, NF-e, NFC-e, NFS-e, CT-e, MDF-e, eSocial, EFD-Reinf, Simples Nacional, Substituição Tributária, ICMS-ST, DIFAL, Escrita contábil e fiscal\nEm andamento: Reforma Tributária (IBS/CBS) e adequação de sistemas fiscais; Formação Completa 5.0 — Simplifica Treinamentos\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski", "po": "Ivan Racoski — encaixe para Product Owner\nMeu cargo era Analista de Regra de Negócio Sênior III; a atuação era de Product Owner — backlog, refinamento e critério de aceite. É essa a posição que busco agora.\n\n• Concebi a solução de layouts configuráveis de NFS-e: incluir um município deixou de exigir refinamento, planejamento e sprint de duas semanas e passou a ser feito pelo próprio cliente, em menos de meio dia. (Questor Sistemas · 2021–2026)\n• Configurei os municípios de maior demanda e eliminei solicitações represadas havia anos no backlog. (Questor Sistemas · 2021–2026)\n• Respondia pelo critério de aceite: nenhuma entrega do time era liberada sem a minha validação. (Questor Sistemas · 2021–2026)\n• Atuei como Scrum Master por cerca de quatro anos, conduzindo refinamento, backlog, cerimônias, planejamento e retrospectivas. (Questor Sistemas · 2021–2026)\n• Conduzi quatro entregas estratégicas simultâneas com um time de cinco desenvolvedores, sem comprometer o compromisso das sprints — prêmio Performei 2022. (Questor Sistemas · 2021–2026)\n• Acumulei a análise de regra de negócio e o papel de Scrum Master do time de Tecnologia durante as ausências da analista responsável, incluindo uma licença-maternidade de seis meses, conduzindo dois times em paralelo sem perda de cadência. (Questor Sistemas · 2021–2026)\n• Levei demandas de mercado para o desenvolvimento, exercendo papel de analista de negócio na priorização de melhorias do produto. (Wonder Sistemas · 2010–2021)\n\nCompetências: Discovery, Gestão de backlog, Roadmap, Refinamento, planejamento e retrospectivas, Scrum, Kanban, Scrum Master, Levantamento e refinamento de requisitos, Regras de negócio, Modelagem de processos, Interface com cliente, Apoio a UX e prototipação em Figma, Jira, Azure DevOps\nEm andamento: Certificação PMP — Project Management Institute; Certificação PSPO I — Scrum.org; Formação Completa 5.0 — Simplifica Treinamentos\nAssociações: PMI — Project Management Institute — Membro ativo · Capítulo Rio Grande do Sul (PMI-RS)\n\nErechim/RS · 100% remoto em todo o Brasil · Disponibilidade imediata\niracoski@gmail.com · (54) 98125-7248 · linkedin.com/in/ivanracoski"}</script>
 <script>
 (function () {
   'use strict';
