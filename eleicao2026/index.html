@@ -180,8 +180,8 @@ kbd {
 .fonte .chip .ponto { width: 9px !important; height: 9px !important; }
 /* Barra de apuração do turno na tela: degradê vermelho → amarelo → verde ao longo da faixa toda */
 .prog-zona { flex-basis: 100%; position: relative; padding: 7px 0; margin: -5px 0 -7px; cursor: help; outline: none; -webkit-tap-highlight-color: transparent; }
-.progresso { height: 6px; border-radius: 3px; background: var(--trilho); overflow: hidden; transition: height .15s ease; }
-.prog-zona:hover .progresso, .prog-zona.aberta .progresso, .prog-zona:focus-visible .progresso { height: 8px; margin-top: -1px; margin-bottom: -1px; }
+/* v1.36: barra sempre na espessura maior e fixa; passar o mouse ou tocar não a altera */
+.progresso { height: 8px; border-radius: 4px; background: var(--trilho); overflow: hidden; }
 .prog-zona:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 /* Dica da barra: seções apuradas de quantas existem */
 .prog-dica {
@@ -245,6 +245,7 @@ kbd {
   .fonte .prog-zona { grid-area: bar; margin-top: -4px; }
 }
 .fonte .txt { flex: 1 1 260px; min-width: 0; }
+.fonte .txt.teste { color: #f0a531; font-weight: 600; }   /* aviso de dados de teste bem visível */
 .fonte a, .fonte button.link {
   font-family: var(--f-display); font-weight: 600; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 7px; padding: 5px 10px;
@@ -779,10 +780,26 @@ ul.sel-list li.sep-antigo { font-family: var(--f-display); font-size: .68rem; le
   .rod-base { flex-direction: column; }
 }
 ul.reg-list li.sep-reg { border-top: 1px solid var(--line); margin-top: 3px; padding-top: 3px; }
+/* v1.36 — sem a faixa VOTOS; a escala fica dentro do quadro do mapa, embaixo, alinhada à esquerda.
+   A troca de modo é feita pelas métricas clicáveis do resumo (Válidos, Brancos, Nulos, Abstenção). */
+.map-box .escala-mapa {
+  order: 2; align-self: stretch; justify-content: start; margin: 4px 0 0; padding: 0;
+  grid-template-columns: 6.5em 9em 110px auto; column-gap: 8px; white-space: nowrap; min-height: 18px; max-width: 100%;
+}
+/* Colunas fixas e alinhadas à esquerda: trocar de modo não mexe na posição da escala */
+.escala-mapa .esc-rot { font-family: var(--f-display); font-weight: 700; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--fg); }
+.escala-mapa #esc-min { text-align: right; overflow: hidden; text-overflow: ellipsis; }
+.escala-mapa #esc-max { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 520px) { .map-box .escala-mapa { grid-template-columns: 5.6em 7.6em minmax(40px, 1fr) minmax(0, auto); column-gap: 6px; font-size: .64rem; } }
+/* Ajuda "?" no canto superior esquerdo do mapa; a dica abre para baixo e para a direita */
+.ajuda-mapa { top: 14px; left: 14px; right: auto; }
+.ajuda-mapa .pop { left: 0; right: auto; top: calc(100% + 8px); }
+/* Siglas dos estados mais leves no computador (no celular ficam como estavam) */
+@media (min-width: 701px) {
+  #mapa text.sigla { font-weight: 500; stroke-width: 1.5px; }
+  #mapa g.callout text.csig { font-weight: 500; }
+}
 </style>
-</head>
-<body>
-
 
 <div class="wrap">
   <header>
@@ -817,18 +834,6 @@ ul.reg-list li.sep-reg { border-top: 1px solid var(--line); margin-top: 3px; pad
 
   <div class="main">
     <div class="esquerda">
-      <div class="barra-mapa vidro">
-        <div class="opcoes">
-          <span class="rot">Votos</span>
-          <div class="modos" role="group" aria-label="Mostrar no mapa os votos">
-            <button type="button" data-modo="vencedor">Válidos</button>
-            <button type="button" data-modo="brancos">Brancos</button>
-            <button type="button" data-modo="nulos">Nulos</button>
-            <button type="button" data-modo="abstencao">Abstenção</button>
-          </div>
-        </div>
-        <div class="escala vazia" id="escala" aria-hidden="true"><span id="esc-min"></span><span class="grad"></span><span id="esc-max"></span></div>
-      </div>
       <div class="map-box vidro" id="map-box">
         <div class="zoom" role="group" aria-label="Zoom do mapa">
           <button type="button" id="zoom-mais" aria-label="Aproximar">+</button>
@@ -847,6 +852,7 @@ ul.reg-list li.sep-reg { border-top: 1px solid var(--line); margin-top: 3px; pad
           <g id="g-siglas"></g>
         </svg>
         <div class="status" id="status">Carregando o mapa…</div>
+        <div class="escala escala-mapa vazia" id="escala" aria-hidden="true"><span id="esc-rot" class="esc-rot"></span><span id="esc-min"></span><span class="grad"></span><span id="esc-max"></span></div>
         <button type="button" class="mini" id="mini" aria-label="Ver o resultado detalhado"><span class="mt" id="mini-txt"></span><span class="ir">Detalhes ↑</span></button>
       </div>
       <section class="detalhe vidro resumo resumo-b" id="painel-res" aria-live="polite" aria-label="Resumo da seleção">
@@ -943,7 +949,7 @@ ul.reg-list li.sep-reg { border-top: 1px solid var(--line); margin-top: 3px; pad
   </div>
 
   <div class="rod-base">
-    <span>© 2026 · desenvolvido por <a href="https://www.ivanracoski.com" target="_blank" rel="noopener">Ivan Racoski</a></span>
+    <span>© 2026 · Desenvolvido por <a href="https://www.ivanracoski.com" target="_blank" rel="noopener">Ivan Racoski</a></span>
     <span class="aviso">Página independente, sem vínculo com o TSE.</span>
   </div>
 </footer>
@@ -1248,8 +1254,9 @@ function aplicarResultados() {
     grad.style.background = `linear-gradient(90deg, ${ca}, color-mix(in srgb, ${ca} 22%, transparent) 50%, color-mix(in srgb, ${cb} 22%, transparent) 50%, ${cb})`;
     elEsc.title = "Cor do candidato mais votado em cada estado; quanto mais forte, maior a vantagem sobre o 2º";
   }
+  document.getElementById("esc-rot").textContent = esc ? METRICAS[modo].nome : "Válidos";   // sempre preenchido: as colunas não se deslocam
   if (esc) {
-    elEsc.title = "";
+    elEsc.title = `${METRICAS[modo].nome} por estado, ${METRICAS[modo].base}: do menor ao maior`;
     document.getElementById("esc-min").textContent = fmt(esc.min, 1) + "%";
     const zz = DADOS.ufs.ZZ ? metrica(DADOS.ufs.ZZ) : null;
     document.getElementById("esc-max").textContent = fmt(esc.max, 1) + "%" + (zz != null && zz > esc.max ? ` · ZZ ${fmt(zz, 1)}%` : "");
@@ -1546,11 +1553,54 @@ async function baixarJson(url) {
   return r.json();
 }
 // Busca o 2º turno: primeiro só o arquivo do Brasil; se o horário de geração mudou, baixa as 28 unidades.
+// 2º turno: só os 2 finalistas do 1º turno (pelo número). O arquivo do TSE pode listar todos os candidatos com 0 voto,
+// o que fazia aparecer "+ Outros 10 candidatos". Se nenhum número bater, mantém o arquivo como veio.
+const FINALISTAS = new Set(Object.values(DADOS_1T.cands).filter(c => /2.?\s*turno/i.test(c.st || "")).map(c => String(c.n)));
+function soFinalistas(dados) {
+  const ficam = Object.keys(dados.cands).filter(sq => FINALISTAS.has(String(dados.cands[sq].n)));
+  if (!ficam.length || ficam.length === Object.keys(dados.cands).length) return;
+  for (const sq of Object.keys(dados.cands)) if (!ficam.includes(sq)) delete dados.cands[sq];
+  for (const uf in dados.ufs) {
+    const v = dados.ufs[uf].votos, nv = {};
+    ficam.forEach(sq => { if (sq in v) nv[sq] = v[sq]; });
+    dados.ufs[uf].votos = nv;
+  }
+}
+// Arquivo de teste do 2º turno: se existir "teste-2turno.json" na mesma pasta do site, os dados vêm dele em vez do TSE.
+// Basta apagar o arquivo do repositório para o site voltar a ler o TSE (a ausência é lembrada até recarregar a página).
+const ARQ_TESTE = "teste-2turno.json";
+let testeAusente = false, emTeste = false;
+async function lerTeste() {
+  if (testeAusente) return null;
+  try {
+    const r = await fetch(ARQ_TESTE, { cache: "no-cache" });
+    if (!r.ok) { testeAusente = true; return null; }
+    const j = await r.json();
+    if (!j || !j.cands || !j.ufs || !j.ufs.BR) { testeAusente = true; return null; }
+    return j;
+  } catch (e) { testeAusente = true; return null; }
+}
 async function buscarTurno2() {
   const T = TURNOS[2];
   if (buscando) return;
   buscando = true;
   try {
+    const teste = await lerTeste();
+    if (teste) {
+      emTeste = true;
+      const novo = { ele: T.ele, turno: 2, gerado: teste.gerado, cands: { ...teste.cands }, ufs: teste.ufs };
+      soFinalistas(novo);
+      const mudou = teste.gerado !== T.hora || !T.dados;
+      T.p = Number(teste.ufs.BR.p) || 0; T.and = teste.and || "p"; T.sec = teste.sec || null;
+      T.dados = novo; T.hora = teste.gerado; T.erro = null; T.falhas = 0;
+      T.final = T.and === "f" && T.p >= 100;
+      if (mudou) {
+        if (turnoAtivo === 2) { DADOS = T.dados; atualizarTudo(); animarProgresso(pReal(2), 1200); }
+        if (!escolhaManual && turnoAtivo === 1 && T.p > 0) trocarTurno(2);
+      }
+      return;
+    }
+    emTeste = false;
     const br = lerArquivoTse(await baixarJson(urlTse(T.ele, "br")));
     T.p = br.d.p; T.and = br.and; T.sec = br.sec;
     if (br.hora !== T.hora || !T.dados) {
@@ -1570,6 +1620,7 @@ async function buscarTurno2() {
           }
         }
       }));
+      soFinalistas(novo);
       T.dados = novo; T.hora = br.hora;
       T.erro = falhas ? `${falhas} de ${UNIDADES.length} arquivos não responderam; mantidos os anteriores` : null;
       if (turnoAtivo === 2) { DADOS = T.dados; atualizarTudo(); animarProgresso(pReal(2), 1200); }
@@ -1736,7 +1787,7 @@ function textoChips() {
 function textoFonte() {
   const T2 = TURNOS[2];
   const aud = document.getElementById("aud-t2");
-  if (aud) aud.textContent = !T2.dados ? (T2.falhas ? "Sem resposta do TSE nesta página" : "Leitura ao vivo a cada 60 s")
+  if (aud) aud.textContent = emTeste ? `TESTE: dados fictícios de ${ARQ_TESTE}` : !T2.dados ? (T2.falhas ? "Sem resposta do TSE nesta página" : "Leitura ao vivo a cada 60 s")
     : T2.final ? `Arquivos de ${T2.hora} · totalização encerrada`
     : `Arquivos de ${T2.hora} · leitura ao vivo a cada 60 s`;
   textoChips();
@@ -1751,9 +1802,11 @@ function textoFonte() {
   }
   const seg = proxima ? Math.max(0, Math.ceil((proxima - Date.now()) / 1000)) : null;
   const quando = buscando ? "buscando agora…" : seg != null ? `próxima em ${seg} s` : "";
-  if (T2.final) txt.textContent = `Totalização encerrada · arquivos do TSE de ${T2.hora}.`;
   const hora = (T2.hora || "").split(" ")[1] || T2.hora;
-  if (T2.erro) txt.textContent = `Ao vivo · dados do TSE das ${hora} · ${T2.erro} · ${quando}`;
+  txt.classList.toggle("teste", emTeste);
+  if (emTeste) txt.textContent = `TESTE · dados fictícios do arquivo ${ARQ_TESTE} (${T2.hora}) · apague o arquivo para voltar ao TSE · ${T2.final ? "encerrado" : quando}`;
+  else if (T2.final) txt.textContent = `Totalização encerrada · arquivos do TSE de ${T2.hora}.`;
+  else if (T2.erro) txt.textContent = `Ao vivo · dados do TSE das ${hora} · ${T2.erro} · ${quando}`;
   else txt.textContent = `Ao vivo · dados do TSE das ${hora} (Brasília) · ${quando}`;
 }
 
@@ -2142,6 +2195,5 @@ iniciar();
 animarProgresso(pReal(1), DUR_ABRIR, true);
 buscarTurno2();
 </script>
-
 </body>
 </html>
