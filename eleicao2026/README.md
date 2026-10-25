@@ -12,13 +12,36 @@ Não precisa de servidor, banco de dados nem chave de acesso.
 
 | Arquivo | Para que serve |
 |---|---|
-| `index.html` | O site inteiro (código, dados do 1º turno, fotos e QR Code do Pix embutidos). |
+| `index.html` | O site inteiro (código, dados do 1º turno, fotos, QR Code do Pix e contador de visitas). |
 | `previa.png` | Imagem que aparece ao compartilhar o link no WhatsApp, Facebook, X, LinkedIn etc. |
 | `.nojekyll` | Avisa o GitHub Pages para publicar os arquivos como estão. |
 | `README.md` | Este arquivo. |
+| `teste-2turno.json` | **Opcional, só para teste.** Votos fictícios do 2º turno. Veja "Testar o 2º turno" abaixo. |
 
-Os quatro ficam juntos na mesma pasta. O site não usa caminhos fixos, então funciona em qualquer pasta (`/eleicao2026/`, raiz, outro domínio).
+Os arquivos ficam juntos na mesma pasta. O site não usa caminhos fixos, então funciona em qualquer pasta (`/eleicao2026/`, raiz, outro domínio).
 A única exceção é o endereço da prévia no `index.html` (`og:image`, `og:url` e `canonical`). Ele aponta para `https://ivanracoski.com/eleicao2026/`, porque os aplicativos exigem endereço completo. Se mudar o endereço, troque essas três linhas.
+
+## Contador de visitas (GoatCounter)
+
+- Painel: **https://ivanracoski.goatcounter.com** (entre com o e-mail e a senha da conta).
+- Mostra visitas por hora e por dia, de onde vieram (LinkedIn, WhatsApp, Google…), país, navegador, sistema e tamanho de tela.
+- O código fica no cabeçalho do `index.html`, logo antes do `<title>`. Ao gerar um `index.html` novo mantendo o cabeçalho, o contador continua.
+- Não usa cookies nem guarda dados pessoais, então não precisa de aviso de cookies. Carrega em segundo plano e não atrasa o mapa.
+- Conta uma visita por abertura da página; as atualizações automáticas do 2º turno não contam de novo.
+- Quem usa bloqueador de anúncios pode não ser contado. O site funciona normalmente para essa pessoa.
+
+## Testar o 2º turno com dados fictícios
+
+1. Envie o `teste-2turno.json` para a mesma pasta do `index.html` no repositório e faça o commit.
+2. Abra o site (se já estava aberto, recarregue). O site encontra o arquivo e usa os dados dele no 2º turno, em vez do TSE:
+   - abre direto no 2º turno, com 65,84% das seções apuradas;
+   - só os dois finalistas (22 e 13), com votos inventados em todos os estados e no exterior;
+   - a linha de status fica em laranja: **"TESTE · dados fictícios do arquivo teste-2turno.json"**.
+3. Para voltar ao normal, **apague o `teste-2turno.json` do repositório** e faça o commit. Quem recarregar a página volta a ler o TSE.
+
+Como funciona: a cada ciclo de 60 s o site tenta ler `teste-2turno.json`. Se o arquivo não existir (erro 404), ele desiste do arquivo até a página ser recarregada e lê o TSE normalmente. O GitHub Pages pode levar um ou dois minutos para publicar ou apagar o arquivo.
+
+Para simular a apuração avançando, edite no arquivo o campo `gerado` (o horário) e os números; o site recarrega os dados quando o `gerado` muda. Para simular o fim, use `"and": "f"` e `"p": 100` no `BR`.
 
 ## Publicar em ivanracoski.com/eleicao2026
 
@@ -28,7 +51,7 @@ A forma depende de onde o **ivanracoski.com** está hospedado.
 É o caso de quem tem um repositório `<seu-usuario>.github.io` com o domínio próprio configurado. Nesse caso:
 
 1. Crie um repositório **público** chamado exatamente **`eleicao2026`**.
-2. Envie os quatro arquivos para a raiz: **Add file → Upload files**, depois **Commit changes**.
+2. Envie os arquivos para a raiz: **Add file → Upload files**, depois **Commit changes**.
    - O `.nojekyll` começa com ponto e pode ficar oculto no seu computador. Se não conseguir enviá-lo, crie-o direto no GitHub: **Add file → Create new file**, nome `.nojekyll`, conteúdo vazio.
 3. Em **Settings → Pages**, em *Build and deployment*, escolha *Deploy from a branch*, a branch `main` e a pasta `/ (root)`. Clique em **Save**.
 4. Em um ou dois minutos o site abre em **https://ivanracoski.com/eleicao2026/**. O GitHub usa o domínio do seu site principal automaticamente para os outros repositórios.
@@ -58,6 +81,7 @@ Para atualizar o site, basta substituir o `index.html`.
   - Se o horário de geração mudou, baixa as 28 unidades, 6 de cada vez.
   - Se não mudou, para por ali, com 1 requisição por minuto por visitante.
 - O TSE guarda esses arquivos em cache por cerca de 50 segundos. Buscar com mais frequência não traz dados novos.
+- No 2º turno a página mostra só os candidatos que foram ao 2º turno no 1º (números 22 e 13), mesmo que o arquivo do TSE liste todos com 0 voto.
 - Se algum arquivo falhar, a página mantém a última leitura boa daquela unidade e avisa na linha de status.
 - Se o TSE não responder, a página continua mostrando os últimos dados e tenta de novo no ciclo seguinte.
 - Quando a totalização é encerrada (100% e `and = "f"`), as buscas param.
@@ -77,9 +101,10 @@ Para mudar o intervalo, altere `const INTERVALO = 60;` no `index.html` (em segun
   - troca entre turnos;
   - totalização encerrada e TSE fora do ar;
   - dica de seções no mouse e no toque.
+- **24/10/2026 (v1.37):** com o `teste-2turno.json` na pasta, a página abriu sozinha no 2º turno, com os 2 finalistas, sem "Outros candidatos" e com o aviso de teste.
 
 ## Origem dos dados e créditos
 
 - Resultados e fotos dos candidatos: arquivos públicos de resultado do TSE (resultados.tse.jus.br).
 - Contornos dos estados: pacote `@svg-maps/brazil` 2.0.0 (MapSVG / Victor Cazanave, licença CC BY 4.0), carregado via jsDelivr.
-- © 2026 · desenvolvido por Ivan Racoski (www.ivanracoski.com). Página independente, sem vínculo com o TSE.
+- © 2026 · Desenvolvido por Ivan Racoski (www.ivanracoski.com). Página independente, sem vínculo com o TSE.
